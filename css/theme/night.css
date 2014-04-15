@@ -1,15 +1,14 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
 /**
  * Black theme for reveal.js.
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,700italic);
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #111111;
   background-color: #111111; }
 
 .reveal {
@@ -17,7 +16,7 @@ body {
   font-size: 30px;
   font-weight: normal;
   letter-spacing: -0.02em;
-  color: #eeeeee; }
+  color: #2d323d; }
 
 ::selection {
   color: white;
@@ -34,15 +33,11 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #eeeeee;
+  color: #2d323d;
+  font-weight: 700;
   font-family: "Montserrat", Impact, sans-serif;
   line-height: 0.9em;
-  letter-spacing: -0.03em;
-  text-transform: none;
-  text-shadow: none; }
-
-.reveal h1 {
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+  letter-spacing: -0.03em; }
 
 /*********************************************
  * LINKS
@@ -71,7 +66,7 @@ body {
 .reveal section img {
   margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #eeeeee;
+  border: 4px solid #2d323d;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
@@ -134,3 +129,9 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #e7ad52; }
+
+.mediumblue {
+  color: #1e8fc6; }
+
+.red {
+  color: #cc2309; }

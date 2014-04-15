@@ -1,10 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 /**
  * Sky theme for reveal.js.
  *
  * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 .reveal a:not(.image) {
   line-height: 1.3em; }
 
@@ -12,18 +12,11 @@
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #add9e4;
-  background: -moz-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #f7fbfc), color-stop(100%, #add9e4));
-  background: -webkit-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-  background: -o-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-  background: -ms-radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
-  background: radial-gradient(center, circle cover, #f7fbfc 0%, #add9e4 100%);
   background-color: #f7fbfc; }
 
 .reveal {
   font-family: "Open Sans", sans-serif;
-  font-size: 36px;
+  font-size: 60px;
   font-weight: normal;
   letter-spacing: -0.02em;
   color: #333333; }
@@ -44,14 +37,10 @@ body {
 .reveal h6 {
   margin: 0 0 20px 0;
   color: #333333;
+  font-weight: 700;
   font-family: "Quicksand", sans-serif;
   line-height: 0.9em;
-  letter-spacing: -0.08em;
-  text-transform: uppercase;
-  text-shadow: none; }
-
-.reveal h1 {
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2); }
+  letter-spacing: -0.08em; }
 
 /*********************************************
  * LINKS
@@ -143,3 +132,9 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #3b759e; }
+
+.mediumblue {
+  color: #1e8fc6; }
+
+.red {
+  color: #cc2309; }

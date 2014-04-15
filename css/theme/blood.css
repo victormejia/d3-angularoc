@@ -1,4 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic);
 /**
  * Blood theme for reveal.js
  * Author: Walther http://github.com/Walther
@@ -10,18 +9,12 @@
  * For other themes, change $codeBackground accordingly.
  *
  */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,700,300italic,700italic);
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
-  background: #222222;
-  background: -moz-radial-gradient(center, circle cover, #626262 0%, #222222 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #626262), color-stop(100%, #222222));
-  background: -webkit-radial-gradient(center, circle cover, #626262 0%, #222222 100%);
-  background: -o-radial-gradient(center, circle cover, #626262 0%, #222222 100%);
-  background: -ms-radial-gradient(center, circle cover, #626262 0%, #222222 100%);
-  background: radial-gradient(center, circle cover, #626262 0%, #222222 100%);
-  background-color: #2b2b2b; }
+  background-color: #ecf0f5; }
 
 .reveal {
   font-family: Ubuntu, "sans-serif";
@@ -45,15 +38,11 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #eeeeee;
+  color: #2d323d;
+  font-weight: 700;
   font-family: Ubuntu, "sans-serif";
   line-height: 0.9em;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 2px #222222; }
-
-.reveal h1 {
-  text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 20px 20px rgba(0, 0, 0, 0.15); }
+  letter-spacing: 0.02em; }
 
 /*********************************************
  * LINKS
@@ -145,6 +134,12 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: #aa2233; }
+
+.mediumblue {
+  color: #1e8fc6; }
+
+.red {
+  color: #cc2309; }
 
 .reveal p {
   font-weight: 300;

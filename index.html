@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title></title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -15,10 +15,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+		<link rel="stylesheet" href="css/theme/pastels.css" id="theme">
+
+		<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+		<link rel="stylesheet" href="css/prism-tomorrow.css">
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -43,25 +46,118 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>Intro to <span class="mediumblue">D3</span> with <span class="red">Angular</span></h1>
+					<h3>Cool Data Viz</h3>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Created by <a href="http://victormejia.github.io">Victor Mejia</a> / <a href="http://twitter.com/victorczm">@victorczm</a></small>
 					</p>
 				</section>
 
+				<!-- SVG Intro -->
 				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
+					<section>
+						<h1>SVG Intro</h1>
+					</section>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
+					<section>
+						<h2>SVG</h2>
+						<pre><code data-trim contenteditable class="language-markup">
+							<svg width="00" height="300" class="light-border" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
+						</code></pre>
+						<svg width="500" height="300" class="light-border tutorial">
+							<text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+							<text x="2" y="25" style="text-anchor: start">(0, 0)</text>
+						</svg>
+					</section>
 
+					<section>
+						<h2>Rect</h2>
+						<pre><code data-trim contenteditable class="language-markup">
+							<rect width="40" height="200" x="230" y="100" fill="#1e8fc6"></rect>
+						</code></pre>						
+						<svg width="500" height="300" class="light-border tutorial">
+							<rect width="40" height="200" x="230" y="100" fill="#1e8fc6" />
+							<text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+							<text x="2" y="25" style="text-anchor: start">(0, 0)</text>
+						</svg>
+					</section>
+
+					<section>
+						<h2>Circle</h2>
+						<pre><code data-trim contenteditable class="language-markup">
+							<circle cx="150" cy="100" r="80" fill="#514f73"></circle>
+						</code></pre>						
+						<svg width="500" height="300" class="light-border tutorial">
+							<circle cx="250" cy="150" r="60" fill="#514f73" />
+							<text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+							<text x="2" y="25" style="text-anchor: start">(0, 0)</text>							
+						</svg>
+					</section>
+
+					<section>
+						<h2>Ellipse</h2>
+						<pre><code data-trim contenteditable class="language-markup">
+							<ellipse cx="250" cy="150" rx="50" ry="10"></ellipse>
+						</code></pre>						
+						<svg width="500" height="300" class="light-border tutorial">
+							<ellipse cx="250" cy="150" rx="70" ry="50" fill="#cc2309" />
+							<text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+							<text x="2" y="25" style="text-anchor: start">(0, 0)</text>							
+						</svg>
+					</section>
+
+					<section>
+						<h2>Text</h2>
+						<pre><code data-trim contenteditable class="language-markup">
+							<text x="250" y="150" style="text-anchor: middle">Hello SVG!</text>
+						</code></pre>						
+						<svg width="500" height="300"  class="light-border tutorial">
+							<circle cx="250" cy="150" r="10" fill="#514f73" />
+							<text x="250" y="150" style="text-anchor: middle">Hello SVG!</text>
+							<text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+							<text x="2" y="25" style="text-anchor: start">(0, 0)</text>							
+						</svg>
+					</section>
+
+					<section>
+						<h2>Line</h2>
+						<pre><code data-trim contenteditable class="language-markup">
+							<line x1="150" y1="200" x2="450" y2="300" stroke-width="9" stroke="#2d323d"></line>
+						</code></pre>						
+						<svg width="500" height="300"  class="light-border tutorial">
+							<line x1="100" y1="250" x2="400" y2="100" stroke-width="4" stroke="#2d323d"/>
+							<text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+							<text x="2" y="25" style="text-anchor: start">(0, 0)</text>							
+						</svg>
+					</section>
+
+					<section>
+						<h2>Polyline</h2>
+						<pre><code data-trim contenteditable class="language-markup">
+							<polyline points="20,200 110,50 320,200 470,90" stroke="#514f73" stroke-width="5" fill="none"></polyline>
+						</code></pre>						
+						<svg width="500" height="300"  class="light-border tutorial">
+							<polyline points="20,200 110,50 320,200 470,90" stroke="#514f73" stroke-width="5" fill="none"/>
+							<text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+							<text x="2" y="25" style="text-anchor: start">(0, 0)</text>							
+						</svg>
+					</section>
+
+					<section>
+						<h2>Path</h2>
+						<pre><code data-trim contenteditable class="language-markup">
+							<path d="M 400 100 L 100 200 L 200 100 z" fill="#514f73"></path>
+						</code></pre>						
+						<svg width="500" height="300"  class="light-border tutorial">
+							<path d="M 400 100 L 100 200 L 200 100 z" fill="#514f73" />
+							<text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+							<text x="2" y="25" style="text-anchor: start">(0, 0)</text>							
+						</svg>
+					</section>													
+
+
+				</section>				
+		
 				<!-- Example of nested vertical slides -->
 				<section>
 					<section>
@@ -350,7 +446,10 @@ function linkify( selector ) {
 
 				<section>
 					<h1>THE END</h1>
-					<h3>BY Hakim El Hattab / hakim.se</h3>
+					<h3>This presentation created with
+						<a href="https://github.com/hakimel/reveal.js">Reveal.js</a> <br />by 
+						<a href="http://twitter.com/hakimel">Hakim El Hattab</a>
+					</h3>
 				</section>
 
 			</div>
@@ -358,6 +457,7 @@ function linkify( selector ) {
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
+		<script src="plugin/prism/prism.js"></script>
 		<script src="js/reveal.min.js"></script>
 
 		<script>
@@ -382,7 +482,7 @@ function linkify( selector ) {
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					// { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]

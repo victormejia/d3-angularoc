@@ -318,11 +318,9 @@ body {
 .reveal pre {
 	display: block;
 	position: relative;
-	width: 90%;
-	margin: 15px auto;
-
+	width: 100%;
 	text-align: left;
-	font-size: 0.55em;
+	font-size: 0.45em;
 	font-family: monospace;
 	line-height: 1.2em;
 
@@ -1876,5 +1874,4 @@ body {
 .zoomed .reveal .roll span:after {
 	visibility: hidden;
 }
-
 

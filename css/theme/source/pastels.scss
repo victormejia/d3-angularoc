@@ -1,3 +1,20 @@
+/**
+ * Custom theme for reveal.js
+ *
+ * Original based on theme by Hakim El Hattab, http://hakim.se, 
+ * I went ahead and different colors.
+ *
+ * Using this color palette: 
+ */
+
+// theme colors
+$darkblue: #2d323d;
+$mediumblue: #1e8fc6;
+$lightblue: #ecf0f5;
+$orange: #E82;
+$red: #cc2309;
+$purple: #514f73;
+
 // Base settings for all themes that can optionally be
 // overridden by the super-theme
 
@@ -32,3 +49,7 @@ $selectionColor: #fff;
 @mixin bodyBackground() {
 	background: $backgroundColor;
 }
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------

@@ -5,7 +5,7 @@
  *********************************************/
 
 body {
-	@include bodyBackground();
+	// @include bodyBackground();
 	background-color: $backgroundColor;
 }
 
@@ -35,19 +35,11 @@ body {
 .reveal h6 {
 	margin: $headingMargin;
 	color: $headingColor;
-
+	font-weight: 700;
 	font-family: $headingFont;
 	line-height: $headingLineHeight;
 	letter-spacing: $headingLetterSpacing;
-
-	text-transform: $headingTextTransform;
-	text-shadow: $headingTextShadow;
 }
-
-.reveal h1 {
-	text-shadow: $heading1TextShadow;
-}
-
 
 /*********************************************
  * LINKS
@@ -168,3 +160,21 @@ body {
 }
 
 
+/*********************************************
+ * Custom Colors
+ *********************************************/
+.mediumblue {
+	color: $mediumblue;
+}
+
+.red {
+	color: $red;
+}
+
+.light-border {
+	border: 1px solid $purple;
+}
+
+svg.tutorial {
+	font-size: 0.4em;
+}
