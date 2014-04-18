@@ -1,0 +1,79 @@
+/**
+ * Custom theme for reveal.js
+ *
+ * Original based on theme by Hakim El Hattab, http://hakim.se, 
+ * I went ahead and different colors.
+ *
+ * Using this color palette: 
+ */
+
+/*********************************************
+ * Override vars
+ *********************************************/
+// theme colors
+$darkblue: #2d323d;
+$mediumblue: #1e8fc6;
+$lightblue: #ecf0f5;
+$orange: #E82;
+$red: #cc2309;
+$purple: #514f73;
+
+// Base settings for all themes that can optionally be
+// overridden by the super-theme
+
+// Background of the presentation
+$backgroundColor: $lightblue;
+
+// Primary/body text
+$mainFont: 'Yanone Kaffeesatz', sans-serif;
+$mainFontSize: 60px;
+$mainColor: $darkblue;
+
+// Headings
+$headingMargin: 0 0 20px 0;
+$headingFont: $mainFont;
+$headingColor: $mainColor;
+$headingLineHeight: 0.9em;
+$headingLetterSpacing: 0.02em;
+$headingTextTransform: uppercase;
+$headingTextShadow: 0px 0px 6px rgba(0,0,0,0.2);
+$heading1TextShadow: $headingTextShadow;
+
+// Links and actions
+$linkColor: $purple;
+$linkColorHover: lighten( $linkColor, 20% );
+
+// Text selection
+$selectionBackgroundColor: $darkblue;
+$selectionColor: #fff;
+
+// Generates the presentation background, can be overridden
+// to return a background image or gradient
+@mixin bodyBackground() {
+	background: $backgroundColor;
+}
+
+/*********************************************
+ * My Styles
+ *********************************************/
+.mediumblue {
+	color: $mediumblue;
+}
+
+.red {
+	color: $red;
+}
+
+svg {
+	border: 1px solid $purple;
+	font-size: 0.4em;
+}
+
+#needsomescale {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 1.3s;
+}
+
+// Theme template ------------------------------
+@import "theme";
+// ---------------------------------------------

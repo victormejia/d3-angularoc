@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <title></title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/main.css" id="theme">
+        <link rel="stylesheet" href="lib/css/animate.min.css">
+
+        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+
+        <!-- For syntax highlighting -->
+        <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+        <link rel="stylesheet" href="lib/css/prism-tomorrow.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>Intro to <span class="mediumblue">D3</span> with <span class="red">Angular</span></h1>
+                    <h3>Cool Data Viz</h3>
+                    <p>
+                        <small>Created by <a href="http://victormejia.github.io">Victor Mejia</a> / <a href="http://twitter.com/victorczm">@victorczm</a></small>
+                    </p>
+                </section>
+
+                <!-- SVG Intro -->
+                <section>
+                    <h1>SVG Intro</h1>
+                </section>
+
+                <section>
+                    <h2>SVG</h2>
+                    <pre><code data-trim contenteditable class="language-markup">
+                        <svg width="00" height="300" class="light-border" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
+                    </code></pre>
+                    <svg width="500" height="300" class="light-border tutorial">
+                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>
+                    </svg>
+                </section>
+
+                <section>
+                    <h2>Rect</h2>
+                    <pre><code data-trim contenteditable class="language-markup">
+                        <rect width="40" height="200" x="230" y="100" fill="#1e8fc6"></rect>
+                    </code></pre>                       
+                    <svg width="500" height="300" class="light-border tutorial">
+                        <rect width="40" height="200" x="230" y="100" fill="#1e8fc6" />
+                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>
+                    </svg>
+                </section>
+
+                <section>
+                    <h2>Circle</h2>
+                    <pre><code data-trim contenteditable class="language-markup">
+                        <circle cx="150" cy="100" r="80" fill="#514f73"></circle>
+                    </code></pre>                       
+                    <svg width="500" height="300" class="light-border tutorial">
+                        <circle cx="250" cy="150" r="60" fill="#514f73" />
+                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
+                    </svg>
+                </section>
+
+                <section>
+                    <h2>Ellipse</h2>
+                    <pre><code data-trim contenteditable class="language-markup">
+                        <ellipse cx="250" cy="150" rx="50" ry="10"></ellipse>
+                    </code></pre>                       
+                    <svg width="500" height="300" class="light-border tutorial">
+                        <ellipse cx="250" cy="150" rx="70" ry="50" fill="#cc2309" />
+                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
+                    </svg>
+                </section>
+
+                <section>
+                    <h2>Text</h2>
+                    <pre><code data-trim contenteditable class="language-markup">
+                        <text x="250" y="150" style="text-anchor: middle">Hello SVG!</text>
+                    </code></pre>                       
+                    <svg width="500" height="300"  class="light-border tutorial">
+                        <circle cx="250" cy="150" r="10" fill="#514f73" />
+                        <text x="250" y="150" style="text-anchor: middle">Hello SVG!</text>
+                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
+                    </svg>
+                </section>
+
+                <section>
+                    <h2>Line</h2>
+                    <pre><code data-trim contenteditable class="language-markup">
+                        <line x1="150" y1="200" x2="450" y2="300" stroke-width="9" stroke="#2d323d"></line>
+                    </code></pre>                       
+                    <svg width="500" height="300"  class="light-border tutorial">
+                        <line x1="100" y1="250" x2="400" y2="100" stroke-width="4" stroke="#2d323d"/>
+                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
+                    </svg>
+                </section>
+
+                <section>
+                    <h2>Polyline</h2>
+                    <pre><code data-trim contenteditable class="language-markup">
+                        <polyline points="20,200 110,50 320,200 470,90" stroke="#514f73" stroke-width="5" fill="none"></polyline>
+                    </code></pre>                       
+                    <svg width="500" height="300"  class="light-border tutorial">
+                        <polyline points="20,200 110,50 320,200 470,90" stroke="#514f73" stroke-width="5" fill="none"/>
+                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
+                    </svg>
+                </section>
+
+                <section>
+                    <h2>Path</h2>
+                    <pre><code data-trim contenteditable class="language-markup">
+                        <path d="M 400 100 L 100 200 L 200 100 z" fill="#514f73"></path>
+                    </code></pre>                       
+                    <svg width="500" height="300"  class="light-border tutorial">
+                        <path d="M 400 100 L 100 200 L 200 100 z" fill="#514f73" />
+                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
+                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
+                    </svg>
+                </section>                                                  
+                
+                <section>
+                    <h3>Check this out too</h3>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">
+                        https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial
+                    </a>
+                </section>         
+
+                <section>
+                    <h1>Let's build a <span class="mediumblue">bar chart</span></h1>
+                </section>
+        
+                
+                <section>
+                    <pre><code data-trim class="language-javascript">
+var data = [
+{ tech: "HTML5", score: 11},
+{ tech: "HTML", score: 100},
+{ tech: "JavaScript", score: 53},
+{ tech: "CSS", score: 51},
+{ tech: "SQL", score: 83},
+{ tech: "Java", score: 91},
+{ tech: "Python", score: 49},
+{ tech: "C", score: 43},
+{ tech: ".NET Framework", score: 45},
+{ tech: "ASP.NET", score: 18},
+{ tech: "C#", score: 28 },
+{ tech: "PHP", score: 39},
+{ tech: "C++", score: 21},
+{ tech: "Ruby", score: 12},
+{ tech: "R", score: 33},
+{ tech: "D", score: 18},
+{ tech: "Data definition language", score: 13},
+{ tech: "MATLAB", score: 25},
+{ tech: "XML", score: 23},
+{ tech: "Visual Basic", score: 21},
+];
+                    </code></pre>
+                    <a href="http://goo.gl/C10TQy">Google Trends 2013: Software Technologies</a>
+                </section>
+
+                <section><h2>Some boilerplate</h2></section>
+
+                <section>
+                    <pre><code class="language-markup">
+<div class="chart"></div>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <pre><code class="language-css">
+html, body {
+    height: 100%;
+}
+
+body {
+    margin:0;
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    background-color: #ecf0f5;
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>app.js</h2>
+                    <pre><code class="language-javascript">
+var w = window.innerWidth,
+    h = window.innerHeight,
+    margin = 40
+
+// select the .chart element and append an svg with attrs
+var svg = d3.select('.chart')
+    .append('svg') // append() returns a new selection
+    .attr({
+        width: w - margin * 2,
+        height: h - margin * 2
+    })
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Let's talk about <span class="mediumblue">data.</span></h2>
+                </section>
+
+                <section>
+                    <h3>Data are <span class="mediumblue">arrays.</span></h3>
+                    <pre><code class="language-javascript">
+var data = [1, 3, 5, 7, 9];
+
+var meetups = [
+    { name: 'AngularJSOC', members: 100 },
+    { name: 'OCMongoDB'  , members: 20 }
+]                        
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Data are mapped to <span class="mediumblue">elements.</span></h3>
+                    <pre><code class="language-javascript">
+var r = svg.selectAll('rect')
+    .data(data); // this creates empty placeholders
+
+// appending to the enter selection creates new elements
+r.enter().append('rect') 
+    .attr(/*...*/)                        
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>We can chain</h3>
+                    <pre><code class="language-javascript">
+// create viz
+var r = svg.selectAll('rect')
+    .data(data)
+    .enter()
+    .append('rect')
+    .attr({
+        x: function (d, i) {
+            return i * barWidth;
+        },
+        y: function (d, i) {
+            return svgHeight - d.value;
+        },
+        height: function (d) {
+            return d.value
+        },
+        width: barWidth,
+        fill: fillColor
+    })                            
+                    </code></pre>
+                </section>
+
+                <section><h2><a href="/demos/01-basic-barchart/index.html">demo</a></section></h2>
+                <section data-state="useanimate">
+                    <h2>Good, but that needs some <span style="display:inline-block;" class="mediumblue" id="needsomescale">scale</span></h2>
+                </section>
+                    
+                <section>
+                    <pre><code class="language-javascript">
+var heightScale = d3.scale.linear()
+    .domain([0, d3.max(data, function (d) { return d.value})])
+    .range([0, svgHeight])
+
+// ordinal scales for discrete data
+var xScale = d3.scale.ordinal()
+    .domain(data.map(function (d) { return d.category; }))
+    .rangeRoundBands([0, svgWidth], 0.1);                                            
+                    </code></pre>
+                </section>
+                
+                <section>
+                       <h3>Use scales for rect's attr</h3>
+                       <pre>
+                           <code class="language-javascript">
+.attr({
+    x: function (d, i) {
+        return xScale(d.category)
+    },
+    y: function (d, i) {
+        return svgHeight - heightScale(d.value);
+    },
+    height: function (d) {
+        return heightScale(d.value);
+    },
+    width: xScale.rangeBand(),
+    fill: fillColor
+})
+                            </code>
+                       </pre> 
+                </section>
+                
+                <section><h2><a href="/demos/02-barchart-scaled/index.html">scale demo</a></section></h2>
+
+                <section>
+                    <h2>Hooray!</h2>
+                    <div><img src="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" alt=""></div>
+                    <a href="http://goo.gl/nkFq9l">http://goo.gl/nkFq9l</a>
+                </section>
+
+                <section>
+                    <h1>THE END</h1>
+                    <h3>This presentation created with
+                        <a href="https://github.com/hakimel/reveal.js">Reveal.js</a> <br />by 
+                        <a href="http://twitter.com/hakimel">Hakim El Hattab</a>
+                    </h3>
+                </section>
+
+            </div>
+
+        </div>
+    
+        <script src="lib/js/head.min.js"></script>
+        <script src="plugin/prism/prism.js"></script>
+        <script src="js/reveal.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/d3/d3.min.js"></script>
+        <script src="js/app.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
