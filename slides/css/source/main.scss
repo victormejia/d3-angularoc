@@ -7,6 +7,9 @@
  * Using this color palette: 
  */
 
+/*********************************************
+ * Override vars
+ *********************************************/
 // theme colors
 $darkblue: #2d323d;
 $mediumblue: #1e8fc6;
@@ -41,7 +44,7 @@ $linkColor: $purple;
 $linkColorHover: lighten( $linkColor, 20% );
 
 // Text selection
-$selectionBackgroundColor: #FF5E99;
+$selectionBackgroundColor: $darkblue;
 $selectionColor: #fff;
 
 // Generates the presentation background, can be overridden
@@ -50,6 +53,27 @@ $selectionColor: #fff;
 	background: $backgroundColor;
 }
 
+/*********************************************
+ * My Styles
+ *********************************************/
+.mediumblue {
+	color: $mediumblue;
+}
+
+.red {
+	color: $red;
+}
+
+svg {
+	border: 1px solid $purple;
+	font-size: 0.4em;
+}
+
+#needsomescale {
+  -webkit-animation-duration: 2s;
+  -webkit-animation-delay: 1.3s;
+}
+
 // Theme template ------------------------------
-@import "../template/theme";
+@import "theme";
 // ---------------------------------------------

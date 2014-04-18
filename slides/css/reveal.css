@@ -319,6 +319,7 @@ body {
 	display: block;
 	position: relative;
 	width: 100%;
+	max-height: 500px;
 	text-align: left;
 	font-size: 0.45em;
 	font-family: monospace;

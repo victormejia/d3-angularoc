@@ -44,7 +44,9 @@ body {
 /*********************************************
  * LINKS
  *********************************************/
-
+.reveal a {
+	border-bottom: 1px dashed $purple;
+}
 .reveal a:not(.image) {
 	color: $linkColor;
 	text-decoration: none;
@@ -55,12 +57,13 @@ body {
 	     -o-transition: color .15s ease;
 	        transition: color .15s ease;
 }
-	.reveal a:not(.image):hover {
-		color: $linkColorHover;
 
-		text-shadow: none;
-		border: none;
-	}
+.reveal a:not(.image):hover {
+	color: $linkColorHover;
+
+	text-shadow: none;
+	// border: none;
+}
 
 .reveal .roll span:after {
 	color: #fff;
@@ -157,24 +160,4 @@ body {
  *********************************************/
 .reveal .slide-number {
   color: $linkColor;
-}
-
-
-/*********************************************
- * Custom Colors
- *********************************************/
-.mediumblue {
-	color: $mediumblue;
-}
-
-.red {
-	color: $red;
-}
-
-.light-border {
-	border: 1px solid $purple;
-}
-
-svg.tutorial {
-	font-size: 0.4em;
 }
