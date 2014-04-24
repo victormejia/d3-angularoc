@@ -22,7 +22,7 @@
 // ];
 
 var el = d3.select('#chart'),
-	margin = {top: 40, right: 10, bottom: 80, left: 40}, // margin used for axis
+	margin = {top: 20, right: 10, bottom: 80, left: 40}, // margin used for axis
 	elWidth = parseInt(el.style('width'), 10),
 	elHeight = parseInt(el.style('height'), 10),
 	width = elWidth - margin.right - margin.left,
@@ -83,12 +83,24 @@ var r = svg.selectAll('rect')
 		x: function (d, i) {
 			return xScale(d.lang)
 		},
-		y: function (d, i) {
-			return yScale(d.value);
-		},
-		height: function (d) {
-			return height - yScale(d.value);
-		},
+		y: height,
+		height: 0,
 		width: xScale.rangeBand(),
 		fill: fillColor
+	});
+
+r.transition()
+	.duration(700)
+	.attr({
+		y: function (d, i) {
+			return yScale(d.value)
+		},
+		height: function (d) {
+			return height - yScale(d.value)
+		}
 	})
+
+
+
+
+

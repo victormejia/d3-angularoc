@@ -35,8 +35,11 @@ gulp.task('watch', ['connect'], function () {
 	gulp.watch([
 		'slides/**/*.html',
 		'slides/js/**/*.js',
-		'slides/css/**/*.scss'
+		'slides/css/**/*.scss',
+		'slides/demos/**/*.js',
+		'slides/demos/demos.css'
 	], function(event) {
+		console.log(event.path)
 		return gulp.src(event.path)
 			.pipe($.connect.reload());
 	});

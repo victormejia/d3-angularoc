@@ -1,0 +1,55 @@
+body {
+	font-family: sans-serif;
+	background-color: #fff;
+	margin: 0;
+}
+
+.axis path, .axis line {
+	fill: none;
+	stroke: #c0c0c0;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	fill: #777;
+	font-size: 12px;
+	shape-rendering: crispEdges;
+}
+
+#chart {
+	height: 500px;
+}
+
+.container {
+	width: 100%;
+}
+
+.main-content {
+	max-width: 900px;
+	box-sizing: border-box;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.panel {
+	margin-bottom: 20px;
+	border: 1px solid #e2e2e2;
+	width: 100%;
+}
+
+.panel-heading {
+	background: #f7f7f7;
+	color: #2c3e50;
+	border-bottom: 1px solid #ECECEC;
+	padding-bottom: 9px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 11px;
+	position: relative;
+}
+
+.panel-body {
+	background: #fff;
+	margin: 0;
+	padding: 20px;
+}
