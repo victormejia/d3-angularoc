@@ -49,7 +49,6 @@ body {
  *********************************************/
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   margin: 0 0 20px 0;
-  color: #2d323d;
   font-weight: 700;
   font-family: 'Yanone Kaffeesatz', sans-serif;
   line-height: 0.9em;
@@ -82,20 +81,9 @@ body {
  * IMAGES
  *********************************************/
 .reveal section img {
-  margin: 15px 0px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #2d323d;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-  -webkit-transition: all 0.2s linear;
-  -moz-transition: all 0.2s linear;
-  -ms-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear; }
-
-.reveal a:hover img {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: #514f73;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
+  margin: -15px 0px;
+  max-height: 100%;
+  max-width: 100%; }
 
 /*********************************************
  * NAVIGATION CONTROLS

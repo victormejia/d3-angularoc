@@ -1,9 +1,10 @@
 var el = d3.select('#chart'),
-	margin = {top: 20, right: 10, bottom: 80, left: 40}, // margin used for axis
+	margin = {top: 40, right: 10, bottom: 80, left: 40}, // margin used for axis
 	elWidth = parseInt(el.style('width'), 10),
 	elHeight = parseInt(el.style('height'), 10),
 	width = elWidth - margin.right - margin.left,
 	height = elHeight - margin.top - margin.bottom,
+	barWidth = Math.round(width / data.length),
 	fillColor = '#2d323d';
 
 var svg = d3.select("#chart").append("svg")
@@ -12,8 +13,6 @@ var svg = d3.select("#chart").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
-/* Create Viz
-----------------------------------------------*/
 // we need to scale
 var yScale = d3.scale.linear()
 	.domain([0, d3.max(data, function (d) { return d.value})])
@@ -60,24 +59,12 @@ var r = svg.selectAll('rect')
 		x: function (d, i) {
 			return xScale(d.lang)
 		},
-		y: height,
-		height: 0,
-		width: xScale.rangeBand(),
-		fill: fillColor
-	});
-
-r.transition()
-	.duration(700)
-	.attr({
 		y: function (d, i) {
-			return yScale(d.value)
+			return yScale(d.value);
 		},
 		height: function (d) {
-			return height - yScale(d.value)
-		}
+			return height - yScale(d.value);
+		},
+		width: xScale.rangeBand(),
+		fill: fillColor
 	})
-
-
-
-
-
