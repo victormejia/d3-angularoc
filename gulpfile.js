@@ -10,7 +10,9 @@ gulp.task('connect', function () {
 	$.connect.server({
 		root: ['slides'],
 		port: 9000,
-		livereload: true
+		livereload: {
+			port: 1337
+		}
 	});
 });
 

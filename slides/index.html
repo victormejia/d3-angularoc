@@ -45,9 +45,8 @@
             <div class="slides">
                 <section>
                     <h1>Intro to <span class="mediumblue">D3</span> with <span class="red">Angular</span></h1>
-                    <h3>Cool Data Viz</h3>
                     <p>
-                        <small>Created by <a href="http://victormejia.github.io">Victor Mejia</a> / <a href="http://twitter.com/victorczm">@victorczm</a></small>
+                        Created by <a href="http://victormejia.github.io">Victor Mejia</a> / <a href="http://twitter.com/victorczm">@victorczm</a>
                     </p>
                 </section>
 
@@ -248,11 +247,11 @@ var rect = svg.selectAll('rect')
                 </section>
 
                 <section>
-                    <h1>Let's talk about <span class="mediumblue">data.</span></h1>
+                    <h1>Let's talk about <span class="mediumblue">data</span></h1>
                 </section>
 
                 <section>
-                    <h3>Data are <span class="mediumblue">arrays.</span></h3>
+                    <h3>Data are <span class="mediumblue">arrays</span></h3>
                     <pre><code class="language-javascript">
 var data = [1, 3, 5, 7, 9];
 
@@ -264,13 +263,13 @@ var meetups = [
                 </section>
 
                 <section>
-                    <h3>Data are mapped to <span class="mediumblue">elements.</span></h3>
+                    <h3>Data are mapped to <span class="mediumblue">elements</span></h3>
                     <pre><code class="language-javascript">
-var r = svg.selectAll('rect')
+var selection = svg.selectAll('rect')
     .data(data); // this creates empty placeholders
 
 // appending to the enter selection creates new elements
-r.enter().append('rect') 
+selection.enter().append('rect') 
     .attr(/*...*/)                        
                     </code></pre>
                 </section>
@@ -293,7 +292,7 @@ r.enter().append('rect')
                 <section>
                     <h3>We can chain</h3>
                     <pre><code class="language-javascript">// create viz
-var r = svg.selectAll('rect')
+var selection = svg.selectAll('rect')
     .data(data)
     .enter()
     .append('rect')
@@ -313,6 +312,30 @@ var r = svg.selectAll('rect')
                     </code></pre>
                 </section>
 
+                <section>
+                    <h1>Some useful <div class="mediumblue">D3</div> functions</h1>
+                </section>
+                
+                <section>
+                    <h2>d3.<span class="mediumblue">max</span></h2>
+                    <pre><code class="language-javascript">
+var max = d3.max(values);
+
+var maxRepoCount = d3.max(data, function (d) {
+    return d.value;
+});
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>d3.<span class="mediumblue">extent</span></h2>
+                    <pre><code class="language-javascript">
+var values = [3, 1, 5, 8, 9, 2];                
+
+var max = d3.extent(values); // [1, 9]
+                    </code></pre>
+                </section>
+
                 <section data-state="useanimate">
                     <h1 style="inline-block;" id="needsomescale">Scales</h1>
                 </section>
@@ -327,7 +350,7 @@ var heightScale = d3.scale.linear()
 // ordinal scales for discrete data
 var xScale = d3.scale.ordinal()
     .domain(data.map(function (d) { return d.category; }))
-    .rangeRoundBands([0, width], 0.1);         
+    .rangeRoundBands([0, width], 0.1); // useful for barcharts
                     </code></pre>                    
                 </section>
 
@@ -403,10 +426,16 @@ r.transition()
                     </code></pre>
                 </section>
 
-                <section><h2><a href="/demos/03-barchart-animated/index.html">transition demo</a></section></h2>
+                <section><h2><a href="/demos/03-barchart-animated/index.html">transition demo</a></h2></section>
+                
+                <section><h2><a href="/demos/04-scatterplot-animated/index.html">transition demo 2</a></h2></section>
 
                 <section>
-                    <h2>Hooray!</h2>
+                    <h1>Custom Tooltips</h1>
+                </section>
+
+                <section>
+                    <h2>Let's bring in our <span class="red">Angular</span> chops</h2><br />
                     <div><img src="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" alt=""></div>
                     <a href="http://goo.gl/nkFq9l">http://goo.gl/nkFq9l</a>
                 </section>

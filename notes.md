@@ -18,15 +18,27 @@
 	- [x] scales
 	- [x] axis
 	- [x] transition
+	- [ ] custom tooltips
 	- [ ] mobile friendly and resize
 
 # scatter plot
-	- [ ] start with data and axes
-	- [ ] add animation
-	- [ ] explain enter() and exit()
+	- [x] start with data and axes
+	- [x] add animation
+	- [x] explain enter() and exit()
+
+# line chart
+	- [ ] AAPL stock data for the past year
+	- [ ] time format
+	- [ ] transition
 
 # angular directives
+	- setup in linker
+	- visualization in scope.$watch('data')
 
 # donut chart
+	- [ ] show layout
+	- [ ] directive
 
-# line chart (show entire code, only explain the line segments)
+# optional
+	- [ ] stack layout for line chart (http://bl.ocks.org/mbostock/3943967)
+	

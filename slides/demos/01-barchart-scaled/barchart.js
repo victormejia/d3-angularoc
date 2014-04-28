@@ -39,4 +39,4 @@ var r = svg.selectAll('rect')
 		},
 		width: xScale.rangeBand(),
 		fill: fillColor
-	})
+	});
