@@ -41,40 +41,6 @@ var svg = d3.select("#chart").append("svg")
 
 /* Create Viz
 ----------------------------------------------*/
-
-function handleMouseover(d, i) {
-	// "this" is the element moused over
-	d3.select(this).attr({
-		r: radius*2,
-		fill: 'blue'
-	});
-
-	svg.append("text")
-		.attr({
-			id: "t" + d.x + "-" + d.y + "-" + i,
-			x: function () {
-				return xScale(d.x) - 30;
-			},
-			y: function () {
-				return yScale(d.y) - 15;
-			},
-			stroke: '#B0B0B0',
-			fill: '#B0B0B0'
-		})
-		.text(function () {
-			return [d.x, d.y];
-		});
-}
-
-function handleMouseout(d, i) {
-	d3.select(this).attr({
-		fill: fillColor,
-		r: radius
-	});
-
-	d3.select("#t" + d.x + "-" + d.y + "-" + i).remove()
-}
-
 var xScale = d3.scale.linear()
 	.domain([0, d3.max(data, function (d) { return d.x; }) + 10])
 	.range([0, width]);
