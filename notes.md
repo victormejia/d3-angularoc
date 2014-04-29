@@ -18,7 +18,7 @@
 	- [x] scales
 	- [x] axis
 	- [x] transition
-	- [ ] custom tooltips
+	- [x] custom tooltips
 	- [ ] mobile friendly and resize
 
 # scatter plot

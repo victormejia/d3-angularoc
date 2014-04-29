@@ -336,7 +336,7 @@ var max = d3.extent(values); // [1, 9]
                     </code></pre>
                 </section>
 
-                <section data-state="useanimate">
+                <section data-background="#2d323d" data-state="new-section">
                     <h1 style="inline-block;" id="needsomescale">Scales</h1>
                 </section>
 
@@ -377,7 +377,7 @@ var xScale = d3.scale.ordinal()
 
                 <section><h2><a href="/demos/01-barchart-scaled/index.html">demo</a></h2></section>
                 
-                <section>
+                <section data-background="#2d323d" data-state="new-section">
                     <h1>Axis</h1>
                 </section>
 
@@ -401,7 +401,7 @@ var xAxisGroup = svg.append("g").attr({
 
                 <section><h2><a href="/demos/02-barchart-axis/index.html">axis demo</a></section></h2>
 
-                <section>
+                <section data-background="#2d323d" data-state="new-section">
                     <h1>Transisitions</h1>
                 </section>
 
@@ -430,14 +430,85 @@ r.transition()
                 
                 <section><h2><a href="/demos/04-scatterplot-animated/index.html">transition demo 2</a></h2></section>
 
-                <section>
+                <section data-background="#2d323d" data-state="new-section">
                     <h1>Custom Tooltips</h1>
                 </section>
 
                 <section>
+                    <h3>selection.<span class="mediumblue">on(type, listener)</span></h2>
+                    <pre><code class="language-javascript">
+var r = svg.selectAll('rect')
+    .data(data)
+    .enter()
+    .append('rect')
+        .attr(...)
+        .on('mouseover', handleMouseover);
+
+function handleMouseover(d, i) {
+    // this: element moused over
+    // d: datum
+    // i: index
+
+}                                
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>tooltip.css</h3>
+                    <pre><code class="language-css">
+.tooltip {
+    visibility: hidden;
+    background-color: #39393d;
+}
+
+.tooltip text {
+    fill: #fff;
+    font-size: 12px;
+    shape-rendering: crispEdges;
+}                        
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>add tooltip to svg</h3>
+                    <pre><code class="language-javascript">
+var tooltip = svg.append('g').attr({class: 'tooltip'});
+tooltip.append('rect').attr({ height: '30', width: '100' });
+tooltip.append('text').attr({ x: 10, y: 20 }); // relative to group element
+                    </code></pre>
+                </section>
+
+
+                <section>
+                    <h3>event handlers</h3>
+                    <pre><code class="language-javascript">
+function handleMouseover(d, i) {
+    // calculate x, y
+    var tooltip = svg.select('.tooltip')
+                    .attr({
+                        transform: 'translate(' + [x,y] + ')'
+                    });
+    
+    tooltip.select('text')
+        .text(function () {
+            return 'Repos: ' + d.value;
+        });
+
+    tooltip.style('visibility', 'visible');
+}
+
+function handleMouseout(d, i) {
+    svg.select('.tooltip').style('visibility', 'hidden')
+}                        
+                    </code></pre>
+                </section>
+
+                <section><h2><a href="/demos/05-barchart-tooltips/index.html">tooltip demo </a></h2></section>
+
+                <section data-background="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" data-state="new-section">
                     <h2>Let's bring in our <span class="red">Angular</span> chops</h2><br />
-                    <div><img src="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" alt=""></div>
-                    <a href="http://goo.gl/nkFq9l">http://goo.gl/nkFq9l</a>
+<!--                     <div><img src="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" alt=""></div>
+                    <a href="http://goo.gl/nkFq9l">http://goo.gl/nkFq9l</a> -->
                 </section>
 
                 <section>

@@ -26,6 +26,9 @@ svg {
   -webkit-animation-duration: 2s;
   -webkit-animation-delay: 1s; }
 
+.new-section .reveal {
+  color: #ecf0f5; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
