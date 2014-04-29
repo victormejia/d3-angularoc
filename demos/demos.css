@@ -53,3 +53,15 @@ body {
 	margin: 0;
 	padding: 20px;
 }
+
+.tooltip {
+	visibility: hidden;
+	background-color: #39393d;
+	height: 30px;
+}
+
+.tooltip text {
+	fill: #fff;
+	font-size: 12px;
+	shape-rendering: crispEdges;
+}

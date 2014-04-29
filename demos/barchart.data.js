@@ -16,7 +16,7 @@ var data = [
 	
 ];
 
-d3.shuffle(data);
+//d3.shuffle(data);
 
 var data2 = [
 	{ 
