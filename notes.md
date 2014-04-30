@@ -26,19 +26,20 @@
 	- [x] add animation
 	- [x] explain enter() and exit()
 
+# angular directives
+	- setup in linker
+	- visualization in scope.$watch('data')
+	- response by scope.$watch('width')
+
 # line chart
 	- [ ] AAPL stock data for the past year
 	- [ ] time format
 	- [ ] transition
-
-# angular directives
-	- setup in linker
-	- visualization in scope.$watch('data')
 
 # donut chart
 	- [ ] show layout
 	- [ ] directive
 
 # optional
-	- [ ] stack layout for line chart (http://bl.ocks.org/mbostock/3943967)
+	- [ ] stack layout for bar chart (http://bl.ocks.org/mbostock/3943967)
 	

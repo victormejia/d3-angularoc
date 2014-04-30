@@ -96,3 +96,20 @@ body {
 	stroke: #808080;
 	fill: 'none';
 }
+
+.linechart-tooltip > div {
+	height: 30px;
+	background-color: black;
+}
+
+.linechart-tooltip rect {
+	fill: #2d323d;
+	opacity: 0.9;
+}
+
+.linechart-tooltip text {
+	fill: #fff;
+	font-size: 11px;
+	shape-rendering: crispEdges;
+	font-family: 'Consolas';
+}
