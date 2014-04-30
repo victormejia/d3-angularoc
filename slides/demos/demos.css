@@ -65,3 +65,34 @@ body {
 	font-size: 12px;
 	shape-rendering: crispEdges;
 }
+
+
+/*
+* Line Chart Styles
+*/
+.line {
+  fill: none;
+  stroke: #4B7BAB;
+  stroke-width: 1.5px;
+}
+
+.linechart-tooltip {
+  fill: none;
+  stroke-width: 1px;
+}
+
+.linechart-tooltip > .inner-circle {
+	fill: #3D4A5D;
+}
+
+.linechart-tooltip > .outer-circle {
+	/*fill: 'none';*/
+	fill: #7cb5ec;
+	opacity: 0.2;
+	stroke: #667C9C;
+}
+
+.linechart-tooltip > line {
+	stroke: #808080;
+	fill: 'none';
+}
