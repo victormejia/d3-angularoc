@@ -487,9 +487,9 @@ function handleMouseover(d, i) {
     // ...
     // ...
     var tooltip = svg.select('.tooltip')
-                    .attr({
-                        transform: 'translate(' + [x,y] + ')'
-                    });
+        .attr({
+            transform: 'translate(' + [x,y] + ')'
+        });
     
     tooltip.select('text')
         .text(function () {
@@ -507,10 +507,12 @@ function handleMouseout(d, i) {
 
                 <section><h2><a href="/demos/05-barchart-tooltips/index.html">tooltip demo </a></h2></section>
 
-                <section data-background="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" data-state="new-section">
+                <section><h2><a href="/demos/06-linechart/index.html">tooltip demo 2 </a></h2></section>
+
+                <section data-background="#2d323d" data-state="new-section">
                     <h2>Let's bring in our <span class="red">Angular</span> chops</h2><br />
-<!--                     <div><img src="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" alt=""></div>
-                    <a href="http://goo.gl/nkFq9l">http://goo.gl/nkFq9l</a> -->
+                    <div><img src="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" alt=""></div>
+                    <a href="http://goo.gl/nkFq9l">http://goo.gl/nkFq9l</a>
                 </section>
 
                 <section>
