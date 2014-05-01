@@ -7,25 +7,14 @@ var el = d3.select('#chart'),
 	fillColor = '#2d323d';
 
 var svg = d3.select("#chart")
-	.append("svg")
-		.attr("width", width + margin.left + margin.right)
-		.attr("height", height + margin.top + margin.bottom)
-	.append("g")
-		.attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
-
-var mouseTarget = svg.append("rect")
-		.attr({
-			class: 'mousetarget',
-			width: width,
-			height: height,
-			fill: 'none',
-			'pointer-events': 'all'
-		});
-
+	.append('svg')
+		.attr('width', width + margin.left + margin.right)
+		.attr('height', height + margin.top + margin.bottom)
+	.append('g')
+		.attr('transform', 'translate(' + [width/2 + margin.right * 2, height/2 + margin.top * 2] + ')');
 
 /* Create Viz
 ----------------------------------------------*/
-
 function arcTween(a) {
       // see: http://bl.ocks.org/mbostock/1346410
       var i = d3.interpolate(this._current, a);
@@ -35,22 +24,22 @@ function arcTween(a) {
       };
     }
 
+// generate random data
 var data = d3.range(7).map(function() {
 	return Math.round(Math.random() * 100);
 })
 
 var radius = Math.min(width, height) / 2;
 
-var color = d3.scale.category10();
-
+// group of 10 colors
+var color = d3.scale.category20();
 
 var pie = d3.layout.pie()
   .sort(null);
 
 var arc = d3.svg.arc()
-  .outerRadius(radius* 0.9)
-  .innerRadius(radius *0.5);
-
+  .outerRadius(radius)
+  .innerRadius(radius *0.6);
 
 var path = svg.selectAll("path")
   .data(pie(data))
@@ -58,5 +47,5 @@ var path = svg.selectAll("path")
   .style("fill", function(d, i) { return color(i) })
   .each(function(d) { this._current = {startAngle: 0, endAngle: 0}; });
 
-
+// animate the data
 path.transition().duration(1000).attrTween('d', arcTween);
