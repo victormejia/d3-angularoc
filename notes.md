@@ -35,6 +35,7 @@
 	- [ ] AAPL stock data for the past year
 	- [ ] time format
 	- [ ] transition
+	- [x] directive
 
 # donut chart
 	- [ ] show layout

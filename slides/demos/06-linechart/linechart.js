@@ -66,7 +66,7 @@ d3.csv("aapl.csv", function(error, data) {
 
 	// x-axis
 	svg.append("g")
-		.attr("class", "x axis")
+		.attr("class", "axis")
 		.attr("transform", "translate(0," + height + ")")
 		.call(xAxis);
 
