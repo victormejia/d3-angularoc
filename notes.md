@@ -1,17 +1,17 @@
-# intro
+## intro
 
-# about me
+## about me
 
-# why d3?
+## why d3?
   - [ ] dashboards
   - [ ] need for data viz
   - [ ] google trends
   - [ ] grab data for software technologies
   - [x] let's build a bar chart
 
-# svg primer (different shapes)
+## svg primer (different shapes)
 
-# d3 building blocks with bar chart
+## d3 building blocks with bar chart
   - [x] append svg
   - [x] select all
   - [x] append
@@ -21,25 +21,25 @@
   - [x] custom tooltips
   - [ ] mobile friendly and resize
 
-# scatter plot
+## scatter plot
   - [x] start with data and axes
   - [x] add animation
   - [x] explain enter() and exit()
 
-# angular directives
+## angular directives
   - [ ] setup in linker
   - [ ] visualization in scope.$watch('data')
   - [ ] response by scope.$watch('width')
 
-# line chart
+## line chart
   - [ ] AAPL stock data for the past year
   - [ ] time format
   - [ ] transition
   - [x] directive
 
-# donut chart
+## donut chart
   - [ ] show layout
-  - [ ] directive
+  - [x] directive
 
-# optional
+## optional
   - [ ] stack layout for bar chart (http://bl.ocks.org/mbostock/3943967)
