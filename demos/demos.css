@@ -20,6 +20,11 @@ body {
 	height: 400px;
 }
 
+#chart-mean {
+	height: 400px;
+	background-color: #29292B;
+}
+
 .container {
 	width: 100%;
 }
