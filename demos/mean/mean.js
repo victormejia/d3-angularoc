@@ -15,7 +15,7 @@ var svg = el
 /* Create Viz
 ----------------------------------------------*/
 //var random = d3.random.normal(50, 20);
-var data = d3.range(100).map(function () {
+var data = d3.range(150).map(function () {
   // return Math.round(random());
   return Math.round(Math.random() * 100);
 });
@@ -53,8 +53,9 @@ var points = svg.selectAll('circle')
     })
     .attr('cy', y(height))
     .attr('r', 4)
-    .attr('fill', 'none')
-  .transition()
+    .attr('fill', 'none');
+
+  points.transition()
     .delay(function (d, i) {
       return i * 100;
     })
@@ -80,9 +81,7 @@ var meanDot = svg.append('circle')
   .attr('cx', x(mean))
   .attr('cy', middleY)
   .attr('r', 15)
-  .attr('fill', 'none')
-
-
+  .attr('fill', 'none');
 
 
 
