@@ -1,10 +1,10 @@
 /**
  * Custom theme for reveal.js
  *
- * Original based on theme by Hakim El Hattab, http://hakim.se, 
+ * Original based on theme by Hakim El Hattab, http://hakim.se,
  * I went ahead and different colors.
  *
- * Using this color palette: 
+ * Using this color palette:
  */
 
 /*********************************************
@@ -50,23 +50,23 @@ $selectionColor: #fff;
 // Generates the presentation background, can be overridden
 // to return a background image or gradient
 @mixin bodyBackground() {
-	background: $backgroundColor;
+  background: $backgroundColor;
 }
 
 /*********************************************
  * My Styles
  *********************************************/
 .mediumblue {
-	color: $mediumblue;
+  color: $mediumblue;
 }
 
 .red {
-	color: $red;
+  color: $red;
 }
 
 svg {
-	border: 1px solid $purple;
-	font-size: 0.4em;
+  border: 1px solid $purple;
+  font-size: 0.4em;
 }
 
 #needsomescale {
@@ -75,7 +75,7 @@ svg {
 }
 
 .new-section .reveal {
-	color: $lightblue;
+  color: $lightblue;
 }
 
 // Theme template ------------------------------

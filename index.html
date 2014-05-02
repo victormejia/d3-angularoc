@@ -1,565 +1,557 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8">
 
-        <title></title>
+    <title></title>
 
-        <meta name="description" content="">
-        <meta name="author" content="Victor Mejia">
+    <meta name="description" content="">
+    <meta name="author" content="Victor Mejia">
 
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <link rel="stylesheet" href="css/reveal.min.css">
-        <link rel="stylesheet" href="css/main.css" id="theme">
-        <link rel="stylesheet" href="lib/css/animate.min.css">
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/main.css" id="theme">
+    <link rel="stylesheet" href="lib/css/animate.min.css">
 
-        <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700' rel='stylesheet' type='text/css'>
 
-        <!-- For syntax highlighting -->
-        <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
-        <link rel="stylesheet" href="lib/css/prism-tomorrow.css">
+    <!-- For syntax highlighting -->
+    <!-- <link rel="stylesheet" href="lib/css/zenburn.css"> -->
+    <link rel="stylesheet" href="lib/css/prism-tomorrow.css">
 
-        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
-        <script>
-            if( window.location.search.match( /print-pdf/gi ) ) {
-                var link = document.createElement( 'link' );
-                link.rel = 'stylesheet';
-                link.type = 'text/css';
-                link.href = 'css/print/pdf.css';
-                document.getElementsByTagName( 'head' )[0].appendChild( link );
-            }
-        </script>
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+      if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+      }
+    </script>
 
-        <!--[if lt IE 9]>
-        <script src="lib/js/html5shiv.js"></script>
-        <![endif]-->
-    </head>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
 
-    <body>
-        <div class="reveal">
-            <!-- Any section element inside of this container is displayed as a slide -->
-            <div class="slides">
-                <section>
-                    <h1>Intro to <span class="mediumblue">D3</span> with <span class="red">Angular</span></h1>
-                    <p>
-                        Created by <a href="http://victormejia.github.io">Victor Mejia</a> / <a href="http://twitter.com/victorczm">@victorczm</a>
-                    </p>
-                </section>
+  <body>
+    <div class="reveal">
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+        <section>
+          <h1>Intro to <span class="mediumblue">D3</span> with <span class="red">Angular</span></h1>
+          <p>
+            Created by <a href="http://victormejia.github.io">Victor Mejia</a> / <a href="http://twitter.com/victorczm">@victorczm</a>
+          </p>
+        </section>
 
-                <!-- SVG Intro -->
-                <section>
-                    <h1>SVG Intro</h1>
-                </section>
+        <!-- SVG Intro -->
+        <section>
+          <h1>SVG Intro</h1>
+        </section>
 
-                <section>
-                    <h2>SVG</h2>
-                    <pre><code data-trim contenteditable class="language-markup">
-                        <svg width="500" height="300" class="light-border"></svg>
-                    </code></pre>
-                    <svg width="500" height="300" class="light-border tutorial">
-                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
-                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>
-                    </svg>
-                </section>
+        <section>
+          <h2>SVG</h2>
+          <pre><code data-trim contenteditable class="language-markup">
+            <svg width="500" height="300" class="light-border"></svg>
+          </code></pre>
+          <svg width="500" height="300" class="light-border tutorial">
+            <text x="500" y="290" text-anchor="end">(500, 300)</text>
+            <text x="2" y="25" text-anchor="start">(0, 0)</text>
+          </svg>
+        </section>
 
-                <section>
-                    <h2>Rect</h2>
-                    <pre><code data-trim contenteditable class="language-markup">
-                        <rect width="40" height="200" x="230" y="100" fill="#1e8fc6"></rect>
-                    </code></pre>                       
-                    <svg width="500" height="300" class="light-border tutorial">
-                        <rect width="40" height="200" x="230" y="100" fill="#1e8fc6" />
-                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
-                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>
-                    </svg>
-                </section>
+        <section>
+          <h2>Rect</h2>
+          <pre><code data-trim contenteditable class="language-markup">
+            <rect width="40" height="200" x="230" y="100" fill="#1e8fc6"></rect>
+          </code></pre>
+          <svg width="500" height="300" class="light-border tutorial">
+            <rect width="40" height="200" x="230" y="100" fill="#1e8fc6" />
+            <text x="500" y="290" text-anchor="end">(500, 300)</text>
+            <text x="2" y="25" text-anchor="start">(0, 0)</text>
+          </svg>
+        </section>
 
-                <section>
-                    <h2>Circle</h2>
-                    <pre><code data-trim contenteditable class="language-markup">
-                        <circle cx="150" cy="100" r="80" fill="#514f73"></circle>
-                    </code></pre>                       
-                    <svg width="500" height="300" class="light-border tutorial">
-                        <circle cx="250" cy="150" r="60" fill="#514f73" />
-                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
-                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
-                    </svg>
-                </section>
+        <section>
+          <h2>Circle</h2>
+          <pre><code data-trim contenteditable class="language-markup">
+            <circle cx="150" cy="100" r="80" fill="#514f73"></circle>
+          </code></pre>
+          <svg width="500" height="300" class="light-border tutorial">
+            <circle cx="250" cy="150" r="60" fill="#514f73" />
+            <text x="500" y="290" text-anchor="end">(500, 300)</text>
+            <text x="2" y="25" text-anchor="start">(0, 0)</text>
+          </svg>
+        </section>
 
-                <section>
-                    <h2>Ellipse</h2>
-                    <pre><code data-trim contenteditable class="language-markup">
-                        <ellipse cx="250" cy="150" rx="50" ry="10"></ellipse>
-                    </code></pre>                       
-                    <svg width="500" height="300" class="light-border tutorial">
-                        <ellipse cx="250" cy="150" rx="70" ry="50" fill="#cc2309" />
-                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
-                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
-                    </svg>
-                </section>
+        <section>
+          <h2>Ellipse</h2>
+          <pre><code data-trim contenteditable class="language-markup">
+            <ellipse cx="250" cy="150" rx="50" ry="10" fill="#cc2309"></ellipse>
+          </code></pre>
+          <svg width="500" height="300" class="light-border tutorial">
+            <ellipse cx="250" cy="150" rx="70" ry="50" fill="#cc2309" />
+            <text x="500" y="290" text-anchor="end">(500, 300)</text>
+            <text x="2" y="25" text-anchor="start">(0, 0)</text>
+          </svg>
+        </section>
 
-                <section>
-                    <h2>Text</h2>
-                    <pre><code data-trim contenteditable class="language-markup">
-                        <text x="250" y="150" style="text-anchor: middle">Hello SVG!</text>
-                    </code></pre>                       
-                    <svg width="500" height="300"  class="light-border tutorial">
-                        <circle cx="250" cy="150" r="10" fill="#514f73" />
-                        <text x="250" y="150" style="text-anchor: middle">Hello SVG!</text>
-                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
-                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
-                    </svg>
-                </section>
+        <section>
+          <h2>Text</h2>
+          <pre><code data-trim contenteditable class="language-markup">
+            <text x="250" y="150" text-anchor="middle">Hello SVG!</text>
+          </code></pre>
+          <svg width="500" height="300"  class="light-border tutorial">
+            <circle cx="250" cy="150" r="10" fill="#514f73" />
+            <text x="250" y="150" text-anchor="middle">Hello SVG!</text>
+            <text x="500" y="290" text-anchor="end">(500, 300)</text>
+            <text x="2" y="25" text-anchor="start">(0, 0)</text>
+          </svg>
+        </section>
 
-                <section>
-                    <h2>Line</h2>
-                    <pre><code data-trim contenteditable class="language-markup">
-                        <line x1="150" y1="200" x2="450" y2="300" stroke-width="9" stroke="#2d323d"></line>
-                    </code></pre>                       
-                    <svg width="500" height="300"  class="light-border tutorial">
-                        <line x1="100" y1="250" x2="400" y2="100" stroke-width="4" stroke="#2d323d"/>
-                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
-                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
-                    </svg>
-                </section>
+        <section>
+          <h2>Line</h2>
+          <pre><code data-trim contenteditable class="language-markup">
+            <line x1="150" y1="200" x2="450" y2="300" stroke-width="9" stroke="#2d323d"></line>
+          </code></pre>
+          <svg width="500" height="300"  class="light-border tutorial">
+            <line x1="100" y1="250" x2="400" y2="100" stroke-width="4" stroke="#2d323d"/>
+            <text x="500" y="290" text-anchor="end">(500, 300)</text>
+            <text x="2" y="25" text-anchor="start">(0, 0)</text>
+          </svg>
+        </section>
 
-                <section>
-                    <h2>Polyline</h2>
-                    <pre><code data-trim contenteditable class="language-markup">
-                        <polyline points="20,200 110,50 320,200 470,90" stroke="#514f73" stroke-width="5" fill="none"></polyline>
-                    </code></pre>                       
-                    <svg width="500" height="300"  class="light-border tutorial">
-                        <polyline points="20,200 110,50 320,200 470,90" stroke="#514f73" stroke-width="5" fill="none"/>
-                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
-                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
-                    </svg>
-                </section>
+        <section>
+          <h2>Polyline</h2>
+          <pre><code data-trim contenteditable class="language-markup">
+            <polyline points="20,200 110,50 320,200 470,90" stroke="#514f73" stroke-width="5" fill="none"></polyline>
+          </code></pre>
+          <svg width="500" height="300"  class="light-border tutorial">
+            <polyline points="20,200 110,50 320,200 470,90" stroke="#514f73" stroke-width="5" fill="none"/>
+            <text x="500" y="290" text-anchor="end">(500, 300)</text>
+            <text x="2" y="25" text-anchor="start">(0, 0)</text>
+          </svg>
+        </section>
 
-                <section>
-                    <h2>Path</h2>
-                    <pre><code data-trim contenteditable class="language-markup">
-                        <path d="M 400 100 L 100 200 L 200 100 z" fill="#514f73"></path>
-                    </code></pre>                       
-                    <svg width="500" height="300"  class="light-border tutorial">
-                        <path d="M 400 100 L 100 200 L 200 100 z" fill="#514f73" />
-                        <text x="500" y="290" style="text-anchor: end">(500, 300)</text>
-                        <text x="2" y="25" style="text-anchor: start">(0, 0)</text>                         
-                    </svg>
-                </section>                                                  
-                
-                <section>
-                    <h3>Check this out too</h3>
-                    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">
-                        https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial
-                    </a>
-                </section>         
+        <section>
+          <h2>Path</h2>
+          <pre><code data-trim contenteditable class="language-markup">
+            <path d="M 400 100 L 100 200 L 200 100 z" fill="#514f73"></path>
+          </code></pre>
+          <svg width="500" height="300"  class="light-border tutorial">
+            <path d="M 400 100 L 100 200 L 200 100 z" fill="#514f73" />
+            <text x="500" y="290" text-anchor="end">(500, 300)</text>
+            <text x="2" y="25" text-anchor="start">(0, 0)</text>
+          </svg>
+        </section>
 
-                <section>
-                    <h1>Let's build a <span class="mediumblue">bar chart</span></h1>
-                </section>
-            
-                <section>
-                    <img src="/img/google-big-query.png" alt="">
-                    <p>Top GitHub Repos for 2013</p>
-                </section>
-                
-                <section>
-                    <pre><code data-trim class="language-javascript">
-var data = [
-    { lang: 'JavaScript', value: 15029294},
-    { lang: 'Java', value: 8067591},
-    { lang: 'Ruby', value: 7111235},
-    { lang: 'Python', value: 6780693},
-    { lang: 'PHP', value: 6063580},
-    { lang: 'C++', value: 3813579},
-    { lang: 'C', value: 3593603},
-    { lang: 'CSS', value: 2057291},
-    { lang: 'Shell', value: 1923909},
-    { lang: 'Objective-C', value: 1810001},
-    { lang: 'C#', value: 1575493},
-    { lang: 'Perl', value: 693824},
-    { lang: 'Scala', value: 678519},
-    { lang: 'VimL', value: 610308},
-    { lang: 'CoffeeScript', value: 583445}
+        <section>
+          <h3>Check this out too</h3>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial">
+            https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial
+          </a>
+        </section>
+
+        <section data-background="#2d323d" data-state="new-section">
+          <h1>Let's build a <span class="mediumblue">bar chart</span></h1>
+        </section>
+
+        <section>
+          <img src="/img/google-big-query.png" alt="">
+          <p>Top GitHub Repos for 2013</p>
+        </section>
+
+        <section>
+          <pre><code class="language-javascript">var data = [
+  { lang: 'JavaScript', value: 549385},
+  { lang: 'Ruby', value: 453004},
+  { lang: 'Java', value: 375857},
+  { lang: 'PHP', value: 278937},
+  { lang: 'Python', value: 247099},
+  { lang: 'C++', value: 177001},
+  { lang: 'C', value: 167175},
+  { lang: 'CSS', value: 105897},
+  { lang: 'C#', value: 76874},
+  { lang: 'Objective-C', value: 75399},
+  { lang: 'Shell', value: 70516},
+  { lang: 'Perl', value: 47954},
+  { lang: 'CoffeeScript', value: 27402},
+  { lang: 'Go', value: 23334}
 ];
-                    </code></pre>
-                    <p>Data obtained using <a href="githubarchive">GitHub Archive</a></p>
-                </section>
+          </code></pre>
+          <p>Data obtained using <a href="githubarchive">GitHub Archive</a></p>
+        </section>
 
-                <section><h1>Setup</h1></section>
+        <section data-background="#2d323d" data-state="new-section"><h1>Setup</h1></section>
 
-                <section>
-                    <h3>Margin Convention</h3>
-                    <pre><code class="language-javascript">// (1) Select element
+        <section>
+          <h3>Margin Convention</h3>
+          <pre><code class="language-javascript">// (1) Select element
 var el = d3.select('#chart'),
 
-    // (2) Grab element's dimensions
-    elWidth = parseInt(el.style('width'), 10),
-    elHeight = parseInt(el.style('height'), 10),
+// (2) Grab element's dimensions
+elWidth = parseInt(el.style('width'), 10),
+elHeight = parseInt(el.style('height'), 10),
 
-    // (3) Declare margins for axis
-    margin = {top: 20, right: 10, bottom: 80, left: 40},
+// (3) Declare margins for axis
+margin = {top: 20, right: 10, bottom: 80, left: 40},
 
-    // (4) calculate width and height used for scaling
-    width = elWidth - margin.right - margin.left,
-    height = elHeight - margin.top - margin.bottom;
+// (4) calculate width and height used for scaling
+width = elWidth - margin.right - margin.left,
+height = elHeight - margin.top - margin.bottom;
 
 // (5) append svg element with added margins and group element inside
 var svg = el.append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+.append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
 // now in our code we can just reference width and height
-                    </code></pre>
-                    <a href="http://bl.ocks.org/mbostock/3019563">http://bl.ocks.org/mbostock/3019563</a>
-                </section>
-                
-                <section>
-                    <h1>Selections</h1>
-                </section>
+          </code></pre>
+          <a href="http://bl.ocks.org/mbostock/3019563">http://bl.ocks.org/mbostock/3019563</a>
+        </section>
 
-                <section>
-                    <h2>d3.<span class="mediumblue">select</span></h2>
-                    <pre><code class="language-javascript">
+        <section data-background="#2d323d" data-state="new-section">
+          <h1>Selections</h1>
+        </section>
+
+        <section>
+          <h2>d3.<span class="mediumblue">select</span></h2>
+          <pre><code class="language-javascript">
 var el = d3.select('#chart');
 
 // add an svg element
 var svg = el.append('svg');
-// append returns a new selection
-svg.attr(...)                        
-                    </code></pre>
-                    <h4>One element selected, one appended</h4>
-                </section>
 
-                <section>
-                    <h2>d3.<span class="mediumblue">selectAll</span></h2>
-                    <pre><code class="language-javascript">
+// append returns a new selection
+svg.attr(...)
+          </code></pre>
+          <p>One element selected, one appended</p>
+        </section>
+
+        <section>
+          <h2>d3.<span class="mediumblue">selectAll</span></h2>
+          <pre><code class="language-javascript">
 // with many selected, can change all elements
 var rect = svg.selectAll('rect')
                 .attr(..);
-                    </code></pre>
-                </section>
+          </code></pre>
+        </section>
 
-                <section>
-                    <h1>Let's talk about <span class="mediumblue">data</span></h1>
-                </section>
+        <section data-background="#2d323d" data-state="new-section">
+          <h1>Let's talk about <span class="mediumblue">data</span></h1>
+        </section>
 
-                <section>
-                    <h3>Data are <span class="mediumblue">arrays</span></h3>
-                    <pre><code class="language-javascript">
+        <section>
+          <h3>Data are <span class="mediumblue">arrays</span></h3>
+          <pre><code class="language-javascript">
 var data = [1, 3, 5, 7, 9];
 
 var meetups = [
-    { name: 'AngularJSOC', members: 286 },
-    { name: 'OCMongoDB'  , members: 326 }
-]                        
-                    </code></pre>
-                </section>
+  { name: 'AngularJSOC', members: 286 },
+  { name: 'OCMongoDB'  , members: 326 }
+];
+          </code></pre>
+        </section>
 
-                <section>
-                    <h3>Data are mapped to <span class="mediumblue">elements</span></h3>
-                    <pre><code class="language-javascript">
+        <section>
+          <h3>Data are mapped to <span class="mediumblue">elements</span></h3>
+          <pre><code class="language-javascript">
 var selection = svg.selectAll('rect')
-    .data(data); // this creates empty placeholders
+                  .data(data); // this creates empty placeholders
 
 // appending to the enter selection creates new elements
-selection.enter().append('rect') 
-    .attr(/*...*/)                        
-                    </code></pre>
-                </section>
-                
-                <section>
-                    <h2>Enter, Update & Exit</h2>
-                    <p><a href="http://mbostock.github.io/d3/tutorial/circle.html">Three Little Circles</a></p>
-                    <p><a href="http://bost.ocks.org/mike/join/">Thinking with Joins</a></p>
-                </section>
+selection
+  .enter()
+  .append('rect')
+    .attr(/*...*/)
+          </code></pre>
+        </section>
 
-                <section>
-                    <h3>Things to remember</h3>
-                    <ol>
-                        <li>If the new dataset is <span class="mediumblue">smaller</span> than the old one, the surplus elements end up in the exit selection and get removed.</li>
-                        <li>If the new dataset is <span class="mediumblue">larger</span>, the surplus data ends up in the enter selection and new nodes are added.</li>
-                        <li>If the new dataset is exactly the <span class="mediumblue">same size</span>, then all the elements are simply updated with new positions, and no elements are added or removed.</li>
-                    </ol>
-                </section>
+        <section>
+          <h2>Enter, Update & Exit</h2>
+          <p><a href="http://mbostock.github.io/d3/tutorial/circle.html">Three Little Circles</a></p>
+          <p><a href="http://bost.ocks.org/mike/join/">Thinking with Joins</a></p>
+        </section>
 
-                <section>
-                    <h3>We can chain</h3>
-                    <pre><code class="language-javascript">// create viz
+        <section>
+          <h3>Things to remember</h3>
+          <ol>
+            <li>If the new dataset is <span class="mediumblue">smaller</span> than the old one, the surplus elements end up in the exit selection and get removed.</li>
+            <li>If the new dataset is <span class="mediumblue">larger</span>, the surplus data ends up in the enter selection and new nodes are added.</li>
+            <li>If the new dataset is exactly the <span class="mediumblue">same size</span>, then all the elements are simply updated with new positions, and no elements are added or removed.</li>
+          </ol>
+          <p>src: <a href="http://bost.ocks.org/mike/join/">Thining With Joins/</a></p>
+        </section>
+
+        <section>
+          <h3>We can chain</h3>
+          <pre><code class="language-javascript">// create viz
 var selection = svg.selectAll('rect')
-    .data(data)
-    .enter()
-    .append('rect')
-        .attr({
-            x: function (d, i) {
-                ...
-            },
-            y: function (d, i) {
-                ...
-            },
-            height: function (d) {
-                ...
-            },
-            width: ...,
-            fill: ...
-        })                            
-                    </code></pre>
-                </section>
+  .data(data)
+  .enter()
+  .append('rect')
+    .attr({
+      x: function (d, i) { ... },
+      y: function (d, i) { ... },
+      height: function (d) { ... },
+      width: ...,
+      fill: ...
+    });
+          </code></pre>
+        </section>
 
-                <section>
-                    <h1>Some useful <div class="mediumblue">D3</div> functions</h1>
-                </section>
-                
-                <section>
-                    <h2>d3.<span class="mediumblue">max</span></h2>
-                    <pre><code class="language-javascript">
-var max = d3.max(values);
+        <section data-background="#2d323d" data-state="new-section">
+          <h1>Some useful <div class="mediumblue">D3</div> functions</h1>
+        </section>
 
+        <section>
+          <h2>d3.<span class="mediumblue">max</span></h2>
+          <pre><code class="language-javascript">
+var values = [2, 10, 3];
+var max = d3.max(values); // 10
+
+// if array of objects...
 var maxRepoCount = d3.max(data, function (d) {
-    return d.value;
+  return d.value;
 });
-                    </code></pre>
-                </section>
+          </code></pre>
+        </section>
 
-                <section>
-                    <h2>d3.<span class="mediumblue">extent</span></h2>
-                    <pre><code class="language-javascript">
-var values = [3, 1, 5, 8, 9, 2];                
+        <section>
+          <h2>d3.<span class="mediumblue">extent</span></h2>
+          <pre><code class="language-javascript">
+var values = [3, 1, 5, 8, 9, 2];
 
 var max = d3.extent(values); // [1, 9]
-                    </code></pre>
-                </section>
+          </code></pre>
+        </section>
 
-                <section data-background="#2d323d" data-state="new-section">
-                    <h1 style="inline-block;" id="needsomescale">Scales</h1>
-                </section>
+        <section data-background="#2d323d" data-state="new-section">
+          <h1 style="inline-block;" id="needsomescale">Scales</h1>
+        </section>
 
-                <section>
-                    <h2>d3.<span class="mediumblue">scale</span></h2>
-                    <pre><code class="language-javascript">
+        <section>
+          <h2>d3.<span class="mediumblue">scale</span></h2>
+          <pre><code class="language-javascript">
 var heightScale = d3.scale.linear()
-    .domain([0, d3.max(data, function (d) { return d.value})])
-    .range([height, 0])
+  .domain([0, d3.max(data, function (d) { return d.value})])
+  .range([height, 0])
 
 // ordinal scales for discrete data
 var xScale = d3.scale.ordinal()
-    .domain(data.map(function (d) { return d.category; }))
-    .rangeRoundBands([0, width], 0.1); // useful for barcharts
-                    </code></pre>                    
-                </section>
+  .domain(data.map(function (d) { return d.category; }))
+  .rangeRoundBands([0, width], 0.1); // useful for barcharts
+          </code></pre>
+        </section>
 
-                <section>
-                       <h3>Use scales for rect's attr</h3>
-                       <pre>
-                           <code class="language-javascript">
+        <section>
+             <h3>Use scales for rect's attr</h3>
+             <pre>
+               <code class="language-javascript">
 .attr({
-    x: function (d, i) {
-        return xScale(d.lang)
-    },
-    y: function (d, i) {
-        return yScale(d.value);
-    },
-    height: function (d) {
-        return height - yScale(d.value);
-    },
-    width: xScale.rangeBand(),
-    fill: fillColor
+  x: function (d, i) {
+    return xScale(d.lang)
+  },
+  y: function (d, i) {
+    return yScale(d.value);
+  },
+  height: function (d) {
+    return height - yScale(d.value);
+  },
+  width: xScale.rangeBand(),
+  fill: fillColor
 })
-                            </code>
-                       </pre> 
-                </section>                
+              </code>
+             </pre>
+        </section>
 
-                <section><h2><a href="/demos/01-barchart-scaled/index.html">demo</a></h2></section>
-                
-                <section data-background="#2d323d" data-state="new-section">
-                    <h1>Axis</h1>
-                </section>
+        <section><h2><a href="/demos/01-barchart-scaled/index.html">demo</a></h2></section>
 
-                <section>
-                    <h2>d3.<span class="mediumblue">svg.axis</span></h2>
-                    <pre><code class="language-javascript">
+        <section data-background="#2d323d" data-state="new-section">
+          <h1>Axis</h1>
+        </section>
+
+        <section>
+          <h2>d3.<span class="mediumblue">svg.axis</span></h2>
+          <pre><code class="language-javascript">
 // create axis
 var xAxis = d3.svg.axis()
-    .scale(xScale)
-    .orient("bottom") // place label below tick
-    .tickPadding(10); // padding b/n tick and label
+  .scale(xScale)
+  .orient("bottom") // place label below tick
+  .tickPadding(10); // padding b/n tick and label
 
-var xAxisGroup = svg.append("g").attr({
+var xAxisGroup = svg.append("g")
+  .attr({
     class : 'axis',
     transform: 'translate(' + [0, height] + ')'
-}).call(xAxis)
-    .attr(/* optional attr, maybe rotate labels? */)          
-                    </code></pre>                    
-                </section>                    
-                </section>
+  }).call(xAxis);
 
-                <section><h2><a href="/demos/02-barchart-axis/index.html">axis demo</a></section></h2>
+          </code></pre>
+        </section>
+        </section>
 
-                <section data-background="#2d323d" data-state="new-section">
-                    <h1>Transisitions</h1>
-                </section>
+        <section><h2><a href="/demos/02-barchart-axis/index.html">axis demo</a></section></h2>
 
-                <section>
-                    <h2>General Pattern</h2>
-                    <pre><code class="language-javascript">// (1) initial attributes
+        <section data-background="#2d323d" data-state="new-section">
+          <h1>Transisitions</h1>
+        </section>
+
+        <section>
+          <h2>General Pattern</h2>
+          <pre><code class="language-javascript">// (1) initial attributes
 var r = svg.selectAll('rect')
-    .data(data)
-    .enter()
-    .append('rect')
+  .data(data)
+  .enter()
+  .append('rect')
     .attr(initialAttrs);
 
 // (2) transition to final state
 r.transition()
-    .delay(function (d, i){
-        return d * 25; // delay each element
-    })
-    .ease("linear") // also "elastic", "bounce", etc.
-    .duration(700) // entire transition
-    .attr(finalAttrs)
-                        
-                    </code></pre>
-                </section>
+  .delay(function (d, i){
+    return d * 25; // delay each element
+  })
+  .ease("linear") // also "elastic", "bounce", etc.
+  .duration(700) // entire transition
+  .attr(finalAttrs);
+          </code></pre>
+        </section>
 
-                <section><h2><a href="/demos/03-barchart-animated/index.html">transition demo</a></h2></section>
-                
-                <section><h2><a href="/demos/04-scatterplot-animated/index.html">transition demo 2</a></h2></section>
+        <section><h2><a href="/demos/03-barchart-animated/index.html">transition demo</a></h2></section>
 
-                <section data-background="#2d323d" data-state="new-section">
-                    <h1>Custom Tooltips</h1>
-                </section>
+        <section><h2><a href="/demos/04-scatterplot-animated/index.html">transition demo 2</a></h2></section>
 
-                <section>
-                    <h3>selection.<span class="mediumblue">on(type, listener)</span></h2>
-                    <pre><code class="language-javascript">
+        <section data-background="#2d323d" data-state="new-section">
+          <h1>Custom Tooltips</h1>
+        </section>
+
+        <section>
+          <h3>selection.<span class="mediumblue">on(type, listener)</span></h2>
+          <pre><code class="language-javascript">
 var r = svg.selectAll('rect')
-    .data(data)
-    .enter()
-    .append('rect')
-        .attr(...)
-        .on('mouseover', handleMouseover);
+  .data(data)
+  .enter()
+  .append('rect')
+    .attr(...)
+    .on('mouseover', handleMouseover);
 
 function handleMouseover(d, i) {
-    // this: element moused over
-    // d: datum
-    // i: index
+  // this: element moused over
+  // d: datum
+  // i: index
+}
+          </code></pre>
+        </section>
 
-}                                
-                    </code></pre>
-                </section>
-
-                <section>
-                    <h3>tooltip.css</h3>
-                    <pre><code class="language-css">
+        <section>
+          <h3>tooltip.css</h3>
+          <pre><code class="language-css">
 .tooltip {
-    visibility: hidden;
-    background-color: #39393d;
+  visibility: hidden;
+  background-color: #39393d;
 }
 
 .tooltip text {
-    fill: #fff;
-    font-size: 12px;
-    shape-rendering: crispEdges;
-}                        
-                    </code></pre>
-                </section>
+  fill: #fff;
+  font-size: 12px;
+  shape-rendering: crispEdges;
+}
+          </code></pre>
+        </section>
 
-                <section>
-                    <h3>add tooltip to svg</h3>
-                    <pre><code class="language-javascript">
+        <section>
+          <h3>add tooltip to svg</h3>
+          <pre><code class="language-javascript">
 var tooltip = svg.append('g').attr({class: 'tooltip'});
+
 tooltip.append('rect').attr({ height: '30', width: '100' });
+
 tooltip.append('text').attr({ x: 10, y: 20 }); // relative to group element
-                    </code></pre>
-                </section>
+          </code></pre>
+        </section>
 
 
-                <section>
-                    <h3>event handlers</h3>
-                    <pre><code class="language-javascript">
+        <section>
+          <h3>event handlers</h3>
+          <pre><code class="language-javascript">
 function handleMouseover(d, i) {
-    // calculate x, y
-    // ...
-    // ...
-    var tooltip = svg.select('.tooltip')
-        .attr({
-            transform: 'translate(' + [x,y] + ')'
-        });
-    
-    tooltip.select('text')
-        .text(function () {
-            return 'Repos: ' + d.value;
-        });
+  // calculate x, y (add code to check for boundaries)
+  var pos = { x: xScale(d.lang), y: yScale(d.value) - 35};
 
-    tooltip.style('visibility', 'visible');
+  var tooltip = svg.select('.tooltip')
+    .attr('transform': 'translate(' + [pos.x, pos.y + ')');
+
+  tooltip.select('text').text('Repos: ' + d.value);
+
+  tooltip.style('visibility', 'visible');
 }
 
 function handleMouseout(d, i) {
-    svg.select('.tooltip').style('visibility', 'hidden')
-}                        
-                    </code></pre>
-                </section>
+  svg.select('.tooltip').style('visibility', 'hidden')
+}
+          </code></pre>
+        </section>
 
-                <section><h2><a href="/demos/05-barchart-tooltips/index.html">tooltip demo </a></h2></section>
+        <section><h2><a href="/demos/05-barchart-tooltips/index.html">tooltip demo </a></h2></section>
 
-                <section><h2><a href="/demos/06-linechart/index.html">tooltip demo 2 </a></h2></section>
+        <section><h2><a href="/demos/06-linechart/index.html">tooltip demo 2 </a></h2></section>
 
-                <section data-background="#2d323d" data-state="new-section">
-                    <h2>Let's bring in our <span class="red">Angular</span> chops</h2><br />
-                    <div><img src="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" alt=""></div>
-                    <a href="http://goo.gl/nkFq9l">http://goo.gl/nkFq9l</a>
-                </section>
+        <section data-background="#2d323d" data-state="new-section">
+          <h2>Let's bring in our <span class="red">Angular</span> chops</h2><br />
+          <div><img src="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" alt=""></div>
+          <a href="http://goo.gl/nkFq9l">http://goo.gl/nkFq9l</a>
+        </section>
 
-                <section>
-                    <h1>THE END</h1>
-                    <h3>This presentation created with
-                        <a href="https://github.com/hakimel/reveal.js">Reveal.js</a> <br />by 
-                        <a href="http://twitter.com/hakimel">Hakim El Hattab</a>
-                    </h3>
-                </section>
+        <section>
+          <h1>THE END</h1>
+          <h3>This presentation created with
+            <a href="https://github.com/hakimel/reveal.js">Reveal.js</a> <br />by
+            <a href="http://twitter.com/hakimel">Hakim El Hattab</a>
+          </h3>
+        </section>
 
-            </div>
+      </div>
 
-        </div>
-    
-        <script src="lib/js/head.min.js"></script>
-        <script src="plugin/prism/prism.js"></script>
-        <script src="js/reveal.min.js"></script>
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bower_components/d3/d3.min.js"></script>
-        <script src="js/app.js"></script>
+    </div>
 
-        <script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="plugin/prism/prism.js"></script>
+    <script src="js/reveal.min.js"></script>
+    <script src="bower_components/d3/d3.min.js"></script>
 
-            // Full list of configuration options available here:
-            // https://github.com/hakimel/reveal.js#configuration
-            Reveal.initialize({
-                controls: true,
-                progress: true,
-                history: true,
-                center: true,
+    <script>
 
-                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
 
-                // Parallax scrolling
-                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
-                // parallaxBackgroundSize: '2100px 900px',
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-                // Optional libraries used to extend on reveal.js
-                dependencies: [
-                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-                ]
-            });
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
 
-        </script>
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
 
-    </body>
+    </script>
+
+  </body>
 </html>
