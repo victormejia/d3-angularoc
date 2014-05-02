@@ -1,74 +1,74 @@
 body {
-	font-family: sans-serif;
-	background-color: #fff;
-	margin: 0;
+  font-family: sans-serif;
+  background-color: #fff;
+  margin: 0;
 }
 
 .axis path, .axis line {
-	fill: none;
-	stroke: #c0c0c0;
-	shape-rendering: crispEdges;
+  fill: none;
+  stroke: #c0c0c0;
+  shape-rendering: crispEdges;
 }
 
 .axis text {
-	fill: #777;
-	font-size: 12px;
-	shape-rendering: crispEdges;
+  fill: #777;
+  font-size: 12px;
+  shape-rendering: crispEdges;
 }
 
 #chart {
-	height: 400px;
+  height: 400px;
 }
 
 #chart-mean {
-	height: 400px;
-	background-color: #29292B;
+  height: 400px;
+  background-color: #29292B;
 }
 
 .container {
-	width: 100%;
+  width: 100%;
 }
 
 .main-content {
-	max-width: 900px;
-	box-sizing: border-box;
-	margin: 0 auto;
-	padding: 20px;
+  max-width: 900px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .panel {
-	margin-bottom: 20px;
-	border: 1px solid #e2e2e2;
-	width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #e2e2e2;
+  width: 100%;
 }
 
 .panel-heading {
-	background: #f7f7f7;
-	color: #2c3e50;
-	border-bottom: 1px solid #ECECEC;
-	padding-bottom: 9px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 11px;
-	position: relative;
+  background: #f7f7f7;
+  color: #2c3e50;
+  border-bottom: 1px solid #ECECEC;
+  padding-bottom: 9px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 11px;
+  position: relative;
 }
 
 .panel-body {
-	background: #fff;
-	margin: 0;
-	padding: 20px;
+  background: #fff;
+  margin: 0;
+  padding: 20px;
 }
 
 .tooltip {
-	visibility: hidden;
-	background-color: #39393d;
-	height: 30px;
+  visibility: hidden;
+  background-color: #39393d;
+  height: 30px;
 }
 
 .tooltip text {
-	fill: #fff;
-	font-size: 12px;
-	shape-rendering: crispEdges;
+  fill: #fff;
+  font-size: 12px;
+  shape-rendering: crispEdges;
 }
 
 
@@ -87,34 +87,38 @@ body {
 }
 
 .linechart-tooltip > .inner-circle {
-	fill: #3D4A5D;
+  fill: #3D4A5D;
 }
 
 .linechart-tooltip > .outer-circle {
-	/*fill: 'none';*/
-	fill: #7cb5ec;
-	opacity: 0.2;
-	stroke: #667C9C;
+  /*fill: 'none';*/
+  fill: #7cb5ec;
+  opacity: 0.2;
+  stroke: #667C9C;
 }
 
 .linechart-tooltip > line {
-	stroke: #808080;
-	fill: 'none';
+  stroke: #808080;
+  fill: 'none';
 }
 
 .linechart-tooltip > div {
-	height: 30px;
-	background-color: black;
+  height: 30px;
+  background-color: black;
 }
 
 .linechart-tooltip rect {
-	fill: #2d323d;
-	opacity: 0.9;
+  fill: #2d323d;
+  opacity: 0.9;
 }
 
 .linechart-tooltip text {
-	fill: #fff;
-	font-size: 11px;
-	shape-rendering: crispEdges;
-	font-family: 'Consolas';
+  fill: #fff;
+  font-size: 11px;
+  shape-rendering: crispEdges;
+  font-family: 'Consolas';
+}
+
+.gist-file {
+  font-size: 12px;
 }
