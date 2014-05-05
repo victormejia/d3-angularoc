@@ -510,6 +510,89 @@ function handleMouseout(d, i) {
         </section>
 
         <section>
+          <h2>Basic Directive</h2>
+          <pre><code class="language-javascript">angular.module('app')
+  .directive('barchart', function () {
+    function linker(scope, element, attrs) {
+      // set up all the  components (svg, scales, axis, .etc)
+      // exclude setup code that needs the data
+    }
+
+    return {
+      template: '<div></div>',
+      restrict: 'E',
+      replace: true,
+      link: linker,
+      scope: { // isolate scope
+        data: '=', // bi-directional data binding
+        x: '@', // the x property (string)
+        y: '@' // the y property (string)
+      }
+    };
+  });
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Step 1: "watch" for data</h2>
+          <pre><code class="language-javascript">
+scope.$watch('data', function (newData, oldData) {
+  var data = angular.copy(newData); // let's make a copy
+  scope.render(data);
+}, true); // watch for object equality
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Step 2: scope.render</h3>
+          <pre><code class="language-javascript">
+scope.render = function (data) {
+  // (1) update scales, axis
+  // (2) transition new data
+  // (3) remove any data not needed
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Step 3: watch for resize event</h3>
+          <pre><code class="language-javascript">
+// Browser onresize event
+window.onresize = function() {
+  scope.$apply(); // launch a digest cycle
+};
+
+// resize chart when the width changes
+scope.$watch(function () {
+  return el.clientWidth;
+}, function () {
+  scope.resize();
+});
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Step 4: scope.rezize</h3>
+          <pre><code class="language-javascript">
+scope.resize = function () {
+  // (1) update width
+  width = el.clientWidth - margin.right - margin.left;
+
+  // (2) update svg
+
+  // (3) take everything that is related to width
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Step 5: Directive usage</h3>
+          <pre><code class="language-markup">
+<barchart data="ui.topRepos" x="lang" y="value" class="chart"></barchart>
+          </code></pre>
+        </section>
+
+        <section>
           <h1>THE END</h1>
           <h3>This presentation created with
             <a href="https://github.com/hakimel/reveal.js">Reveal.js</a> <br />by
