@@ -80,10 +80,7 @@ var circles = svg.selectAll('circle')
   .data(data)
   .enter()
   .append('circle')
-    .attr(circleAttrs)
-    .on('mouseover', handleMouseover)
-    .on('mouseout', handleMouseout);
-
+    .attr(circleAttrs);
 
 // setTimeout(function () {
 

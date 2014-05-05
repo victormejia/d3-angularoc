@@ -46,7 +46,7 @@ var points = svg.selectAll('circle')
       return x(d);
     })
     .attr('cy', 0)
-    .attr('r', 4)
+    .attr('r', 5)
     .attr('fill', 'none');
 
     // title
@@ -57,11 +57,11 @@ var points = svg.selectAll('circle')
       .text('Visualizing the mean (n = 150, µ = 50)');
 
     svg.append('text')
-      .attr('x', x(1)).attr('y', middleY + 20).attr('text-anchor', 'start')
+      .attr('x', x(1)).attr('y', middleY + 30).attr('text-anchor', 'start')
       .text('0');
 
     svg.append('text')
-      .attr('x', x(99)).attr('y', middleY + 20).attr('text-anchor', 'end')
+      .attr('x', x(99)).attr('y', middleY + 30).attr('text-anchor', 'end')
       .text('100');
 
   points.transition()

@@ -1,9 +1,0 @@
-{
-  "name": "d3-angularoc",
-  "private": true,
-  "dependencies": {
-    "animate.css": "~3.1.0",
-    "jquery": "~2.1.0",
-    "d3": "~3.4.6"
-  }
-}

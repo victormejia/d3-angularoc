@@ -4,7 +4,6 @@ var gulp = require('gulp');
 
 // load plugins
 var $ = require('gulp-load-plugins')();
-var deploy = require('gulp-gh-pages');
 
 // Connect
 gulp.task('connect', function () {
@@ -43,9 +42,3 @@ gulp.task('watch', ['connect'], function () {
   // Watch scss files
   gulp.watch('slides/css/**/*.scss', ['css']);
 });
-
-// deploy to gh-pages
-gulp.task('deploy', function () {
-  return gulp.src('./slides/**/*')
-    .pipe(deploy('https://github.com/victormejia/d3-angularoc.git'));
-})
