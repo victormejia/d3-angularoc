@@ -46,8 +46,80 @@
         <section>
           <h1>Intro to <span class="mediumblue">D3</span> with <span class="red">Angular</span></h1>
           <p>
-            Created by <a href="http://victormejia.github.io">Victor Mejia</a> / <a href="http://twitter.com/victorczm">@victorczm</a>
+            Created by <a href="http://victormejia.github.io">Victor Mejia</a>
           </p>
+        </section>
+
+        <section>
+          <h2>about me</h2>
+          <p>Software Dev @ LoopNet (CoStar Group)</p>
+          <p>I ♥ JavaScript</p>
+          <hr />
+          <p>Tweeting <a href="https://twitter.com/victorczm">@victorczm</a></p>
+          <p>Pushing code <a href="https://github.com/victormejia/">@victormejia</a></p>
+          <p>Blogging @ <a href="victormejia.github.io">victormejia.github.io</a></p>
+        </section>
+
+        <section>
+          <h1>what  is <span class="mediumblue">d3</span>?</h1>
+        </section>
+
+        <section>
+          <h1><span class="mediumblue">D</span>ata</h1>
+          <h1><span class="mediumblue">D</span>riven</h1>
+          <h1><span class="mediumblue">D</span>ocuments</h1>
+        </section>
+
+        <section>
+          <h2>efficient manipulation of documents based on <span class="mediumblue">data</span></h2>
+        </section>
+
+        <section>
+          <h3>not a charting library, but you can build some awesome charts</h3>
+        </section>
+
+        <section>
+          <h2>let's focus on the word <a href="/demos/mean">visualization</a></p>
+        </section>
+
+        <section>
+          <h2>D3 out in the wild: </h2>
+          <p><a href="https://sublime.wbond.net/packages/Emmet">Emmet Sublime Package</a></p>
+          <p><a href="http://blogs.kqed.org/lowdown/2014/03/18/into-the-drought-californias-shrinking-reservoirs/">California Drought</a></p>
+          <p><a href="http://vudlab.com/simpsons/">Simpson's Paradox</a></p>
+          <p><a href="http://setosa.io">setosa.io</a></p>
+        </section>
+
+        <section>
+          <h1>why <span class="red">Angular</span> and <span class="mediumblue">d3</span>?</h1>
+        </section>
+
+        <section>
+          <h3>resuable components through <br /> <span class="red">directives</span></h3>
+          <pre><code class="language-markup">
+<barchart data="topRepos" fill="#2d323d"></barchart>
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Angular's bi-directionally bound isolate scoped, transcluded, element restricted <span class="red">directives</span></h3>
+          <p>===</p>
+          <h3>it ain't that bad</h3>
+          <p>src: <a href="http://johnkpaul.github.io/presentations/emberconf/components-transclude-directives/#/17">@johnkpaul</a></p>
+        </section>
+
+        <section>
+          <h2>the plan</h2>
+          <ul>
+            <li>svg intro</li>
+            <li>selections</li>
+            <li>scales</li>
+            <li>axis</li>
+            <li>transitions</li>
+            <li>basic tooltips</li>
+            <li>angular integration</li>
+            <li>mobile friendly</li>
+          </ul>
         </section>
 
         <!-- SVG Intro -->
@@ -191,6 +263,11 @@
         <section data-background="#2d323d" data-state="new-section"><h1>Setup</h1></section>
 
         <section>
+          <h2>you only need d3.js</h2>
+          <p>+</p>
+          <h2>some styling</h2>
+        </section>
+        <section>
           <h3>Margin Convention</h3>
           <pre><code class="language-javascript">// (1) Select element
 var el = d3.select('#chart'),
@@ -288,7 +365,7 @@ selection
             <li>If the new dataset is <span class="mediumblue">larger</span>, the surplus data ends up in the enter selection and new nodes are added.</li>
             <li>If the new dataset is exactly the <span class="mediumblue">same size</span>, then all the elements are simply updated with new positions, and no elements are added or removed.</li>
           </ol>
-          <p>src: <a href="http://bost.ocks.org/mike/join/">Thining With Joins/</a></p>
+          <p>src: <a href="http://bost.ocks.org/mike/join/">Thining With Joins</a></p>
         </section>
 
         <section>
@@ -356,24 +433,25 @@ var xScale = d3.scale.ordinal()
              <h3>Use scales for rect's attr</h3>
              <pre>
                <code class="language-javascript">
-.attr({
-  x: function (d, i) {
-    return xScale(d.lang)
-  },
-  y: function (d, i) {
-    return yScale(d.value);
-  },
-  height: function (d) {
-    return height - yScale(d.value);
-  },
-  width: xScale.rangeBand(),
-  fill: fillColor
-})
-              </code>
+selection
+  .attr({
+    x: function (d, i) {
+      return xScale(d.lang)
+    },
+    y: function (d, i) {
+      return yScale(d.value);
+    },
+    height: function (d) {
+      return height - yScale(d.value);
+    },
+    width: xScale.rangeBand(),
+    fill: fillColor
+  })
+                </code>
              </pre>
         </section>
 
-        <section><h2><a href="/demos/01-barchart-scaled/index.html">demo</a></h2></section>
+        <section><h2><a href="/demos/01-barchart-scaled/">demo</a></h2></section>
 
         <section data-background="#2d323d" data-state="new-section">
           <h1>Axis</h1>
@@ -398,7 +476,7 @@ var xAxisGroup = svg.append("g")
         </section>
         </section>
 
-        <section><h2><a href="/demos/02-barchart-axis/index.html">axis demo</a></section></h2>
+        <section><h2><a href="/demos/02-barchart-axis">axis demo</a></section></h2>
 
         <section data-background="#2d323d" data-state="new-section">
           <h1>Transisitions</h1>
@@ -424,9 +502,9 @@ r.transition()
           </code></pre>
         </section>
 
-        <section><h2><a href="/demos/03-barchart-animated/index.html">transition demo</a></h2></section>
+        <section><h2><a href="/demos/03-barchart-animated">transition demo</a></h2></section>
 
-        <section><h2><a href="/demos/04-scatterplot-animated/index.html">transition demo 2</a></h2></section>
+        <section><h2><a href="/demos/04-scatterplot-animated">transition demo 2</a></h2></section>
 
         <section data-background="#2d323d" data-state="new-section">
           <h1>Custom Tooltips</h1>
@@ -499,9 +577,9 @@ function handleMouseout(d, i) {
           </code></pre>
         </section>
 
-        <section><h2><a href="/demos/05-barchart-tooltips/index.html">tooltip demo </a></h2></section>
+        <section><h2><a href="/demos/05-barchart-tooltips">tooltip demo </a></h2></section>
 
-        <section><h2><a href="/demos/06-linechart/index.html">tooltip demo 2 </a></h2></section>
+        <section><h2><a href="/demos/06-linechart">tooltip demo 2 </a></h2></section>
 
         <section data-background="#2d323d" data-state="new-section">
           <h2>Let's bring in our <span class="red">Angular</span> chops</h2><br />
@@ -593,11 +671,22 @@ scope.resize = function () {
         </section>
 
         <section>
-          <h1>THE END</h1>
-          <h3>This presentation created with
-            <a href="https://github.com/hakimel/reveal.js">Reveal.js</a> <br />by
-            <a href="http://twitter.com/hakimel">Hakim El Hattab</a>
-          </h3>
+          <h3>Also check this awesome examples on directives</h3>
+          <p><a href="http://www.ng-newsletter.com/posts/directives.html">Building Custom Directives</a></p>
+          <p><a href="http://www.ng-newsletter.com/posts/d3-on-angular.html">D3 Angular Directive Intro</a></p>
+        </section>
+
+        <section>
+          <h1>Some extra <a href="https://gist.github.com/victormejia/c076c4d2519e5f58a319">Resources</a></h1>
+        </section>
+
+        <section>
+          <h2>and check this playground out:</h2>
+          <a href="http://victormejia.github.io/d3-angular-demos">victormejia.github.io/d3-angular-demos</a>
+          <p>pull requests are welcome :)</p>
+        </section>
+        <section>
+          <h2>the end :)</h1>
         </section>
 
       </div>

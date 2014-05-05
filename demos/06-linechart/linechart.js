@@ -6,14 +6,14 @@ var el = d3.select('#chart'),
   height = elHeight - margin.top - margin.bottom,
   fillColor = '#2d323d';
 
-var svg = d3.select("#chart")
-  .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+var svg = d3.select('#chart')
+  .append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+  .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
-var mouseTarget = svg.append("rect")
+var mouseTarget = svg.append('rect')
     .attr({
       class: 'mousetarget',
       width: width,
@@ -25,10 +25,11 @@ var mouseTarget = svg.append("rect")
 
 /* Create Viz
 ----------------------------------------------*/
-var parseDate = d3.time.format("%d-%b-%y").parse;
+var parseDate = d3.time.format('%d-%b-%y').parse;
+  // see http://bl.ocks.org/mbostock/3902569
   bisectDate = d3.bisector(function(d) { return d.date; }).left,
-  formatValue = d3.format(",.2f"),
-  formatCurrency = function(d) { return "$" + formatValue(d); };
+  formatValue = d3.format(',.2f'),
+  formatCurrency = function(d) { return '$' + formatValue(d); };
 
 var x = d3.time.scale()
   .range([0, width]);
@@ -38,20 +39,20 @@ var y = d3.scale.linear()
 
 var xAxis = d3.svg.axis()
   .scale(x)
-  .orient("bottom")
+  .orient('bottom')
   .ticks(d3.time.months, 1)
   .tickPadding(7)
-  .tickFormat(d3.time.format("%b"));;
+  .tickFormat(d3.time.format('%b'));;
 
 var yAxis = d3.svg.axis()
   .scale(y)
-  .orient("left");
+  .orient('left');
 
 var line = d3.svg.line()
   .x(function(d) { return x(d.date); })
   .y(function(d) { return y(d.close); });
 
-d3.csv("aapl.csv", function(error, data) {
+d3.csv('aapl.csv', function(error, data) {
   data.forEach(function(d) {
     d.date = parseDate(d.date);
     d.close = +d.close;
@@ -65,37 +66,37 @@ d3.csv("aapl.csv", function(error, data) {
   y.domain(d3.extent(data, function(d) { return d.close; }));
 
   // x-axis
-  svg.append("g")
-    .attr("class", "axis")
-    .attr("transform", "translate(0," + height + ")")
+  svg.append('g')
+    .attr('class', 'axis')
+    .attr('transform', 'translate(0,' + height + ')')
     .call(xAxis);
 
   // y-axis
-  svg.append("g")
-      .attr("class", "y axis")
+  svg.append('g')
+      .attr('class', 'y axis')
       .call(yAxis)
-    .append("text")
-      .attr("transform", "rotate(-90)")
-      .attr("y", 6)
-      .attr("dy", ".71em")
-      .style("text-anchor", "end")
-      .text("Price ($)");
+    .append('text')
+      .attr('transform', 'rotate(-90)')
+      .attr('y', 6)
+      .attr('dy', '.71em')
+      .style('text-anchor', 'end')
+      .text('Price ($)');
 
   // stock line chart
-  var path = svg.append("path")
+  var path = svg.append('path')
       .datum(data)
-      .attr("class", "line")
-      .attr("d", line);
+      .attr('class', 'line')
+      .attr('d', line);
 
   // animate path
   // src: http://bl.ocks.org/duopixel/4063326
   var totalLength = path.node().getTotalLength();
-  path.attr("stroke-dasharray", totalLength + " " + totalLength)
-      .attr("stroke-dashoffset", totalLength)
+  path.attr('stroke-dasharray', totalLength + ' ' + totalLength)
+      .attr('stroke-dashoffset', totalLength)
       .transition()
       .duration(700)
-      .ease("linear")
-      .attr("stroke-dashoffset", 0);
+      .ease('linear')
+      .attr('stroke-dashoffset', 0);
 
   // tooltip group
   var tooltip = svg.append('g').attr('class', 'linechart-tooltip').style('visibility', 'hidden'),
@@ -127,7 +128,7 @@ d3.csv("aapl.csv", function(error, data) {
 
     var tooltip = svg.select('.linechart-tooltip');
 
-    tooltip.select("line").attr({ x1: xPos, y1: height, x2: xPos, y2: 0 });
+    tooltip.select('line').attr({ x1: xPos, y1: height, x2: xPos, y2: 0 });
 
     tooltip.select('.inner-circle').attr('cx', xPos).attr('cy', yPos)
 

@@ -4,27 +4,6 @@ body {
   margin: 0;
 }
 
-.axis path, .axis line {
-  fill: none;
-  stroke: #c0c0c0;
-  shape-rendering: crispEdges;
-}
-
-.axis text {
-  fill: #777;
-  font-size: 12px;
-  shape-rendering: crispEdges;
-}
-
-#chart {
-  height: 400px;
-}
-
-#chart-mean {
-  height: 400px;
-  background-color: #29292B;
-}
-
 .container {
   width: 100%;
 }
@@ -59,6 +38,25 @@ body {
   padding: 20px;
 }
 
+#chart {
+  height: 400px;
+}
+
+/*
+* Basic styles for axis and tooltip
+*/
+.axis path, .axis line {
+  fill: none;
+  stroke: #c0c0c0;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  fill: #777;
+  font-size: 12px;
+  shape-rendering: crispEdges;
+}
+
 .tooltip {
   visibility: hidden;
   background-color: #39393d;
@@ -71,53 +69,6 @@ body {
   shape-rendering: crispEdges;
 }
 
-
-/*
-* Line Chart Styles
-*/
-.line {
-  fill: none;
-  stroke: #4B7BAB;
-  stroke-width: 1.5px;
-}
-
-.linechart-tooltip {
-  fill: none;
-  stroke-width: 1px;
-}
-
-.linechart-tooltip > .inner-circle {
-  fill: #3D4A5D;
-}
-
-.linechart-tooltip > .outer-circle {
-  /*fill: 'none';*/
-  fill: #7cb5ec;
-  opacity: 0.2;
-  stroke: #667C9C;
-}
-
-.linechart-tooltip > line {
-  stroke: #808080;
-  fill: 'none';
-}
-
-.linechart-tooltip > div {
-  height: 30px;
-  background-color: black;
-}
-
-.linechart-tooltip rect {
-  fill: #2d323d;
-  opacity: 0.9;
-}
-
-.linechart-tooltip text {
-  fill: #fff;
-  font-size: 11px;
-  shape-rendering: crispEdges;
-  font-family: 'Consolas';
-}
 
 .gist-file {
   font-size: 12px;
