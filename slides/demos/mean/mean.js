@@ -14,9 +14,7 @@ var svg = el
 
 /* Create Viz
 ----------------------------------------------*/
-//var random = d3.random.normal(50, 20);
 var data = d3.range(150).map(function () {
-  // return Math.round(random());
   return Math.round(Math.random() * 100);
 });
 
@@ -24,11 +22,7 @@ var x = d3.scale.linear()
   .domain([0, 100])
   .range([0, width]);
 
-var y = d3.scale.linear()
-  .domain([0, height])
-  .range([height, 0]);
-  
-var middleY = y(height/2);
+var middleY = Math.round(height/2);
 
 // middle axis
 svg.append('line')
@@ -51,9 +45,24 @@ var points = svg.selectAll('circle')
     .attr('cx', function (d) {
       return x(d);
     })
-    .attr('cy', y(height))
+    .attr('cy', 0)
     .attr('r', 4)
     .attr('fill', 'none');
+
+    // title
+    var title = svg.append('text')
+      .attr('x', x(50))
+      .attr('y', height - 20)
+      .attr('text-anchor', 'middle')
+      .text('Visualizing the mean (n = 150, µ = 50)');
+
+    svg.append('text')
+      .attr('x', x(1)).attr('y', middleY + 20).attr('text-anchor', 'start')
+      .text('0');
+
+    svg.append('text')
+      .attr('x', x(99)).attr('y', middleY + 20).attr('text-anchor', 'end')
+      .text('100');
 
   points.transition()
     .delay(function (d, i) {
@@ -61,13 +70,15 @@ var points = svg.selectAll('circle')
     })
     .duration(2500)
     .ease('bounce')
-    .each('end', function (d) {
+    .each('start', function (d) {
       pts.push(d);
-      meanDot
-        .transition()
-        .ease('linear')
+      var mean = d3.mean(pts);
+
+      meanDot.transition().delay(700).ease('linear')
         .attr('cx', x(d3.mean(pts)))
-        .attr('fill', '#45A1DE')
+        .attr('fill', '#45A1DE');
+
+        title.text('Visualizing the mean (n = ' + pts.length + ', µ = ' + d3.format(".2f")(mean) + ')');
     })
     .attr('cx', function (d) {
       return x(d);

@@ -1,0 +1,14 @@
+/*
+* 'Visualizing Mean' styles
+*/
+#chart-mean {
+  height: 400px;
+  background-color: #29292B;
+}
+
+#chart-mean text {
+  fill: #fff;
+  stroke: 'none';
+  font-size: 12px;
+  shape-rendering: crispEdges;
+}

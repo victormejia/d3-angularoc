@@ -3,10 +3,7 @@
 ## about me
 
 ## why d3?
-  - [ ] dashboards
-  - [ ] need for data viz
-  - [ ] google trends
-  - [ ] grab data for software technologies
+  - [x] need for data viz
   - [x] let's build a bar chart
 
 ## svg primer (different shapes)
@@ -19,7 +16,7 @@
   - [x] axis
   - [x] transition
   - [x] custom tooltips
-  - [ ] mobile friendly and resize
+  - [x] mobile friendly and resize
 
 ## scatter plot
   - [x] start with data and axes
@@ -27,18 +24,18 @@
   - [x] explain enter() and exit()
 
 ## angular directives
-  - [ ] setup in linker
-  - [ ] visualization in scope.$watch('data')
-  - [ ] response by scope.$watch('width')
+  - [x] setup in linker
+  - [x] visualization in scope.$watch('data')
+  - [x] response by scope.$watch('width')
 
 ## line chart
-  - [ ] AAPL stock data for the past year
-  - [ ] time format
-  - [ ] transition
+  - [x] AAPL stock data for the past year
+  - [x] time format
+  - [x] transition
   - [x] directive
 
 ## donut chart
-  - [ ] show layout
+  - [x] show layout
   - [x] directive
 
 ## optional

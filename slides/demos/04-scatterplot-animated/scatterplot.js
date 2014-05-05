@@ -34,47 +34,14 @@ var el = d3.select('#chart'),
   radius = 4;
 
 var svg = d3.select("#chart")
-  .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+  .append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
 /* Create Viz
 ----------------------------------------------*/
-
-function handleMouseover(d, i) {
-  // "this" is the element moused over
-  d3.select(this).attr({
-    r: radius*2
-  });
-
-  svg.append("text")
-    .attr({
-      id: "t" + d.x + "-" + d.y + "-" + i,
-      x: function () {
-        return xScale(d.x) - 30;
-      },
-      y: function () {
-        return yScale(d.y) - 15;
-      },
-      stroke: '#B0B0B0',
-      fill: '#B0B0B0'
-    })
-    .text(function () {
-      return [d.x, d.y];
-    });
-}
-
-function handleMouseout(d, i) {
-  d3.select(this).attr({
-    fill: fillColor,
-    r: radius
-  });
-
-  d3.select("#t" + d.x + "-" + d.y + "-" + i).remove()
-}
-
 var xScale = d3.scale.linear()
   .domain([0, d3.max(data, function (d) { return d.x; }) + 10])
   .range([0, width]);
@@ -100,30 +67,28 @@ var circleAttrs = {
 };
 
 // append group element
-var xAxisGroup = svg.append("g").attr({
-  "class": "axis",
-  transform: "translate(" + [0, height] + ")"
+var xAxisGroup = svg.append('g').attr({
+  'class': 'axis',
+  transform: 'translate(' + [0, height] + ')'
 }).call(xAxis);
 
-var yAxisGroup = svg.append("g").attr({
-  "class": "axis"
+var yAxisGroup = svg.append('g').attr({
+  'class': 'axis'
 }).call(yAxis);
 
 // the visualization
-var circles = svg.selectAll("circle")
+var circles = svg.selectAll('circle')
   .data(data)
   .enter()
-  .append("circle")
-  .attr(circleInitialAttrs)
-  .on('mouseover', handleMouseover)
-  .on('mouseout', handleMouseout);
+  .append('circle')
+  .attr(circleInitialAttrs);
 
 circles.transition()
   .delay(function (d, i) {
     return i * 25;
   })
   .duration(2000)
-  .ease("elastic")
+  .ease('elastic')
   .attr(circleAttrs);
 
 

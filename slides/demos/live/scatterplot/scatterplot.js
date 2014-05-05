@@ -33,11 +33,11 @@ var el = d3.select('#chart'),
   fillColor = '#2d323d',
   radius = 4;
 
-var svg = d3.select("#chart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+var svg = d3.select('#chart').append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+  .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
 /* Create Viz
 ----------------------------------------------*/
@@ -49,8 +49,8 @@ var yScale = d3.scale.linear()
   .domain([0, d3.max(data, function (d) { return d.y; }) + 10])
   .range([height, 0]);
 
-var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickPadding(10); //ticks above axis
-var yAxis = d3.svg.axis().scale(yScale).orient("left").tickPadding(10);
+var xAxis = d3.svg.axis().scale(xScale).orient('bottom').tickPadding(10); //ticks above axis
+var yAxis = d3.svg.axis().scale(yScale).orient('left').tickPadding(10);
 
 var circleInitialAttrs = {
   cx: xScale(0),
@@ -66,20 +66,20 @@ var circleAttrs = {
 };
 
 // append group element
-var xAxisGroup = svg.append("g").attr({
-  "class": "axis",
-  transform: "translate(" + [0, height] + ")"
+var xAxisGroup = svg.append('g').attr({
+  'class': 'axis',
+  transform: 'translate(' + [0, height] + ')'
 }).call(xAxis);
 
-var yAxisGroup = svg.append("g").attr({
-  "class": "axis"
+var yAxisGroup = svg.append('g').attr({
+  'class': 'axis'
 }).call(yAxis);
 
 // the visualization
-var circles = svg.selectAll("circle")
+var circles = svg.selectAll('circle')
   .data(data)
   .enter()
-  .append("circle")
+  .append('circle')
     .attr(circleAttrs)
     .on('mouseover', handleMouseover)
     .on('mouseout', handleMouseout);
@@ -94,10 +94,10 @@ var circles = svg.selectAll("circle")
 //  xAxisGroup.transition().call(xAxis);
 //  yAxisGroup.transition().call(yAxis);
 
-//  var c = svg.selectAll("circle")
+//  var c = svg.selectAll('circle')
 //    .data(data2);
 
-//  c.enter().append("circle")
+//  c.enter().append('circle')
 //    .attr(circleInitialAttrs)
 
 //  c.transition()
@@ -105,7 +105,7 @@ var circles = svg.selectAll("circle")
 //      return i * 10;
 //    })
 //    .duration(5000)
-//    .ease("elastic")
+//    .ease('elastic')
 //    .attr(circleAttrs);
 
 //  c.exit().remove();

@@ -1,27 +1,25 @@
 var el = d3.select('#chart'),
-  margin = {top: 20, right: 10, bottom: 80, left: 50}, // margin used for axis
+  margin = {top: 40, right: 10, bottom: 80, left: 50}, // margin used for axis
   elWidth = parseInt(el.style('width'), 10),
   elHeight = parseInt(el.style('height'), 10),
   width = elWidth - margin.right - margin.left,
   height = elHeight - margin.top - margin.bottom,
-  fillColor = '#4B7BAB';
+  barWidth = Math.round(width / data.length),
+  fillColor = '#2d323d';
 
-var svg = d3.select("#chart")
-  .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+var svg = d3.select('#chart').append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
   .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+    .attr('transform', 'translate(' + margin.left + "," + margin.top + ')');
+
 
 /* Create Viz
 ----------------------------------------------*/
 // we need to scale
-var maxVal = d3.max(data, function (d) {
-  return d.value;
-});
 var yScale = d3.scale.linear()
-  .domain([0, maxVal + Math.round(maxVal* 0.05)])
-  .range([height, 0])
+  .domain([0, d3.max(data, function (d) { return d.value})])
+  .range([height, 0]);
 
 var xScale = d3.scale.ordinal()
   .domain(data.map(function (d) { return d.lang; }))
@@ -30,23 +28,23 @@ var xScale = d3.scale.ordinal()
 // create axis
 var xAxis = d3.svg.axis()
   .scale(xScale)
-  .orient("bottom") // place label below tick
+  .orient('bottom') // place label below tick
   .tickPadding(10); // padding b/n tick and label
 
 var yAxis = d3.svg.axis()
   .scale(yScale)
-  .orient("left")
+  .orient('left')
   .tickPadding(10)
-  .tickFormat(d3.format("s"));
+  .tickFormat(d3.format('s'));
 
-var xAxisGroup = svg.append("g").attr({
+var xAxisGroup = svg.append('g').attr({
   class : 'axis',
   transform: 'translate(' + [0, height] + ')'
 }).call(xAxis)
   .selectAll("text")
-    .style("text-anchor", "end")
-    .attr("dx", "-10px")
-    .attr("dy", "-11px")
+    .style('text-anchor', 'end')
+    .attr('dx', '-10px')
+    .attr('dy', '-11px')
     .attr({
       transform: 'rotate(-90)'
     });
@@ -54,6 +52,7 @@ var xAxisGroup = svg.append("g").attr({
 var yAxisGroup = svg.append('g').attr({
   class: 'axis'
 }).call(yAxis);
+
 
 // create visualization
 var r = svg.selectAll('rect')

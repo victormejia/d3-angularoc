@@ -15,29 +15,3 @@ var svg = d3.select('#chart').append('svg')
 
 /* Create Viz
 ----------------------------------------------*/
-// we need to scale
-var yScale = d3.scale.linear()
-  .domain([0, d3.max(data, function (d) { return d.value})])
-  .range([height, 0]);
-
-var xScale = d3.scale.ordinal()
-  .domain(data.map(function (d) { return d.lang; }))
-  .rangeRoundBands([0, width], 0.1);
-
-var r = svg.selectAll('rect')
-  .data(data)
-  .enter()
-  .append('rect')
-  .attr({
-    x: function (d, i) {
-      return xScale(d.lang)
-    },
-    y: function (d, i) {
-      return yScale(d.value);
-    },
-    height: function (d) {
-      return height - yScale(d.value);
-    },
-    width: xScale.rangeBand(),
-    fill: fillColor
-  });

@@ -28,6 +28,8 @@ svg {
 
 .new-section .reveal {
   color: #ecf0f5; }
+  .new-section .reveal .mediumblue {
+    color: #64BAFF; }
 
 /*********************************************
  * GLOBAL STYLES
