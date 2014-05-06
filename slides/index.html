@@ -54,8 +54,8 @@
           <p>I ♥ JavaScript</p>
           <hr />
           <p>Tweeting <a href="https://twitter.com/victorczm">@victorczm</a></p>
-          <p>Pushing code <a href="https://github.com/victormejia/">@victormejia</a></p>
-          <p>Blogging @ <a href="victormejia.github.io">victormejia.github.io</a></p>
+          <p>Coding <a href="https://github.com/victormejia/">@victormejia</a></p>
+          <p>Blogging @ <a href="http://victormejia.github.io">victormejia.github.io</a></p>
         </section>
 
         <section>
@@ -255,7 +255,7 @@
   { lang: 'Go', value: 23334}
 ];
           </code></pre>
-          <p>Data obtained using <a href="githubarchive">GitHub Archive</a></p>
+          <p>Data obtained using <a href="http://www.githubarchive.org/">GitHub Archive</a></p>
         </section>
 
         <section data-background="#2d323d" data-state="new-section"><h1>Setup</h1></section>
@@ -669,7 +669,7 @@ scope.resize = function () {
         </section>
 
         <section>
-          <h2><a href="" target="_blank">directive demo</a></h2>
+          <h2><a href="http://victormejia.github.io/d3-angular-demos/#/bar" target="_blank">directive demo</a></h2>
         </section>
         <section>
           <h3>Also check this awesome examples on directives</h3>
@@ -723,6 +723,11 @@ scope.resize = function () {
         ]
       });
 
+      // open links in new tab
+      var links = document.querySelectorAll('a');
+      for (var i = 0; i < links.length; i++) {
+        links[i].setAttribute('target', '_blank');
+      };
     </script>
 
   </body>
