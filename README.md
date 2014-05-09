@@ -1,6 +1,17 @@
 ## Abstract
 This talk is primarily a code-oriented presentation that will focus on some D3 fundamentals, which will include some basic but useful data visualizations with transitions and animations, integration with Angular, and making them mobile-friendly.
 
+View the [slides](http://victormejia.github.io/d3-angularoc)
+
+## Quick Links to demos
+* [Bar chart](http://victormejia.github.io/d3-angularoc/demos/05-barchart-tooltips/)
+* [Scatterplot](http://victormejia.github.io/d3-angularoc/demos/04-scatterplot-animated/)
+* [Line chart](http://victormejia.github.io/d3-angularoc/demos/06-linechart/)
+* [Visualizing Mean](http://victormejia.github.io/d3-angularoc/demos/mean/)
+* [D3 Angular Demos](http://victormejia.github.io/d3-angular-demos)
+ 
+All source code is under slides/demos.
+
 ## Hacking on this
 I'm using gulp for sass watching and live reloading. Run the following commands to work on this locally:
 
