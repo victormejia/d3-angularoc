@@ -8,8 +8,8 @@ var el = d3.select('#chart'),
   fillColor = '#2d323d';
 
 var svg = d3.select('#chart').append('svg')
-    .attr('width', width + margin.left + margin.right)
-    .attr('height', height + margin.top + margin.bottom)
+    .attr('width', elWidth)
+    .attr('height', elHeight)
   .append("g")
     .attr('transform', 'translate(' + margin.left + "," + margin.top + ')');
 
@@ -42,6 +42,7 @@ var xAxisGroup = svg.append('g').attr({
   class : 'axis',
   transform: 'translate(' + [0, height] + ')'
 }).call(xAxis)
+  // let's rotate the labels
   .selectAll("text")
     .style('text-anchor', 'end')
     .attr('dx', '-10px')

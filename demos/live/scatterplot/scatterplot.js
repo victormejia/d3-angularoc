@@ -19,8 +19,8 @@ var data = [
 ];
 
 var data2 = [
-  { x: 1005, y: 10 },
-  { x: 900,  y: 10  },
+  { x: 90, y: 10 },
+  { x: 50,  y: 10  },
   ];
 
 
@@ -34,8 +34,8 @@ var el = d3.select('#chart'),
   radius = 4;
 
 var svg = d3.select('#chart').append('svg')
-    .attr('width', width + margin.left + margin.right)
-    .attr('height', height + margin.top + margin.bottom)
+    .attr('width', elWidth)
+    .attr('height', elHeight)
   .append('g')
     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
 
