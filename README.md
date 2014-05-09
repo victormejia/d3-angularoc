@@ -3,7 +3,7 @@
 ### Abstract
 This talk is primarily a code-oriented presentation that will focus on some D3 fundamentals, which will include some basic but useful data visualizations with transitions and animations, integration with Angular, and making them mobile-friendly.
 
-View the [slides](http://victormejia.github.io/d3-angularoc).
+View the [slides](http://victormejia.github.io/d3-angularoc) (best viewed in Chrome).
 
 ### Quick links to demos
 * [Bar chart](http://victormejia.github.io/d3-angularoc/demos/05-barchart-tooltips/)
