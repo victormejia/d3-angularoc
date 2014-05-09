@@ -8,8 +8,8 @@ var el = d3.select('#chart'),
   fillColor = '#2d323d';
 
 var svg = d3.select('#chart').append('svg')
-    .attr('width', width + margin.left + margin.right)
-    .attr('height', height + margin.top + margin.bottom)
+    .attr('width', elWidth)
+    .attr('height', elHeight)
   .append("g")
     .attr('transform', 'translate(' + margin.left + "," + margin.top + ')');
 
@@ -69,7 +69,7 @@ var r = svg.selectAll('rect')
   });
 
 r.transition()
-  .duration(700)
+  .duration(1500)
   .attr({
     y: function (d, i) {
       return yScale(d.value)

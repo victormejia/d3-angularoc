@@ -4,7 +4,6 @@
     <meta charset="utf-8">
 
     <title></title>
-
     <meta name="description" content="">
     <meta name="author" content="Victor Mejia">
 
@@ -59,7 +58,7 @@
         </section>
 
         <section>
-          <h1>what  is <span class="mediumblue">d3</span>?</h1>
+          <h1>what  is <span class="mediumblue">D3</span>?</h1>
         </section>
 
         <section>
@@ -69,15 +68,26 @@
         </section>
 
         <section>
+          <h2>Created by <a href="http://twitter.com/mbostock">Mike Bostock</a></h2>
+        </section>
+
+        <section>
           <h2>efficient manipulation of documents based on <span class="mediumblue">data</span></h2>
         </section>
 
         <section>
-          <h3>not a charting library, but you can build some awesome charts</h3>
+          <h3>not a just a charting library, it's so much <a href="http://mbostock.github.io/d3/talk/20111018/#24">more</a></h3>
         </section>
 
         <section>
-          <h2>let's focus on the word <a href="/demos/mean">visualization</a></p>
+          <h2>let's focus on the word <a href="demos/mean">visualization</a></p>
+        </section>
+
+        <section>
+          <h2>check out what</h2>
+          <h2>D3 can do</h2>
+          <p><a href="http://mbostock.github.io/d3/talk/20111018/#24">Awesome Visualizations</a></p>
+          <p><a href="https://github.com/mbostock/d3/wiki/Gallery">D3 Gallery</a></p>
         </section>
 
         <section>
@@ -89,7 +99,7 @@
         </section>
 
         <section>
-          <h1>why <span class="red">Angular</span> and <span class="mediumblue">d3</span>?</h1>
+          <h1>why <span class="red">Angular</span> and <span class="mediumblue">D3</span>?</h1>
         </section>
 
         <section>
@@ -100,10 +110,22 @@
         </section>
 
         <section>
+          <h1>let's be honest...</h1>
+        </section>
+        <section>
           <h3>Angular's bi-directionally bound isolate scoped, transcluded, element restricted <span class="red">directives</span></h3>
           <p>===</p>
-          <h3>it ain't that bad</h3>
+          <h3>it ain't that bad :)</h3>
           <p>src: <a href="http://johnkpaul.github.io/presentations/emberconf/components-transclude-directives/#/17">@johnkpaul</a></p>
+        </section>
+
+        <section>
+          <h1>directives are awesome!</h1>
+        </section>
+
+        <section>
+          <img src="img/angular-enjoyment.png" alt="">
+          <p>source: <a href="http://alicialiu.net/leveling-up-angular-talk/#/1">http://alicialiu.net/leveling-up-angular-talk/#/1</a></p>
         </section>
 
         <section>
@@ -121,7 +143,7 @@
         </section>
 
         <!-- SVG Intro -->
-        <section>
+        <section data-background="#2d323d" data-state="new-section">
           <h1>svg intro</h1>
         </section>
 
@@ -228,13 +250,18 @@
           </a>
         </section>
 
+        <section>
+          <h3>and this</h3>
+          <a href="https://docs.google.com/presentation/d/1CNQLbqC0krocy_fZrM5fZ-YmQ2JgEADRh3qR6RbOOGk/pub?start=true&loop=false&delayms=5000#slide=id.p">Leaving Pixels Behind</a>
+        </section>
+
         <section data-background="#2d323d" data-state="new-section">
           <h1>let's build a <span class="mediumblue">bar chart</span></h1>
         </section>
 
         <section>
-          <img src="/img/google-big-query.png" alt="">
-          <p>Top GitHub Repos for 2013</p>
+          <h4>Top GitHub Languages for 2013</h4>
+          <img src="img/google-big-query.png" alt="">
         </section>
 
         <section>
@@ -255,7 +282,7 @@
   { lang: 'Go', value: 23334}
 ];
           </code></pre>
-          <p>Data obtained using <a href="http://www.githubarchive.org/">GitHub Archive</a></p>
+          <p>Data source: <a href="http://www.githubarchive.org/">GitHub Archive</a></p>
         </section>
 
         <section data-background="#2d323d" data-state="new-section"><h1>Setup</h1></section>
@@ -266,7 +293,7 @@
           <h2>some styling</h2>
         </section>
         <section>
-          <h3>Margin Convention</h3>
+          <h4>Margin Convention</h4>
           <pre><code class="language-javascript">// (1) Select element
 var el = d3.select('#chart'),
 
@@ -283,8 +310,8 @@ height = elHeight - margin.top - margin.bottom;
 
 // (5) append svg element with added margins and group element inside
 var svg = el.append("svg")
-  .attr("width", width + margin.left + margin.right)
-  .attr("height", height + margin.top + margin.bottom)
+  .attr("width", elWidth)
+  .attr("height", elHeight)
 .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
@@ -302,7 +329,7 @@ var svg = el.append("svg")
           <pre><code class="language-javascript">
 var el = d3.select('#chart');
 
-// add an svg element
+// append an svg element
 var svg = el.append('svg');
 
 // append returns a new selection
@@ -357,13 +384,13 @@ selection
         </section>
 
         <section>
-          <h3>Things to remember</h3>
+          <h4>Things to remember</h4>
           <ol>
             <li>If the new dataset is <span class="mediumblue">smaller</span> than the old one, the surplus elements end up in the exit selection and get removed.</li>
             <li>If the new dataset is <span class="mediumblue">larger</span>, the surplus data ends up in the enter selection and new nodes are added.</li>
             <li>If the new dataset is exactly the <span class="mediumblue">same size</span>, then all the elements are simply updated with new positions, and no elements are added or removed.</li>
           </ol>
-          <p>src: <a href="http://bost.ocks.org/mike/join/">Thining With Joins</a></p>
+          <p>source: <a href="http://bost.ocks.org/mike/join/">Thining With Joins</a></p>
         </section>
 
         <section>
@@ -418,7 +445,7 @@ var max = d3.extent(values); // [1, 9]
           <pre><code class="language-javascript">
 var heightScale = d3.scale.linear()
   .domain([0, d3.max(data, function (d) { return d.value})])
-  .range([height, 0])
+  .range([height, 0]);
 
 // ordinal scales for discrete data
 var xScale = d3.scale.ordinal()
@@ -449,7 +476,7 @@ selection
              </pre>
         </section>
 
-        <section><h2><a href="/demos/01-barchart-scaled/" target="_blank">demo</a></h2></section>
+        <section><h2><a href="demos/01-barchart-scaled/" target="_blank">demo</a></h2></section>
 
         <section data-background="#2d323d" data-state="new-section">
           <h1>Axis</h1>
@@ -474,7 +501,7 @@ var xAxisGroup = svg.append("g")
         </section>
         </section>
 
-        <section><h2><a href="/demos/02-barchart-axis" target="_blank">axis demo</a></section></h2>
+        <section><h2><a href="demos/02-barchart-axis" target="_blank">axis demo</a></section></h2>
 
         <section data-background="#2d323d" data-state="new-section">
           <h1>Transisitions</h1>
@@ -500,9 +527,9 @@ r.transition()
           </code></pre>
         </section>
 
-        <section><h2><a href="/demos/03-barchart-animated" target="_blank">transition demo</a></h2></section>
+        <section><h2><a href="demos/03-barchart-animated" target="_blank">transition demo</a></h2></section>
 
-        <section><h2><a href="/demos/04-scatterplot-animated" target="_blank">transition demo 2</a></h2></section>
+        <section><h2><a href="demos/04-scatterplot-animated" target="_blank">transition demo 2</a></h2></section>
 
         <section data-background="#2d323d" data-state="new-section">
           <h1>Custom Tooltips</h1>
@@ -575,22 +602,50 @@ function handleMouseout(d, i) {
           </code></pre>
         </section>
 
-        <section><h2><a href="/demos/05-barchart-tooltips" target="_blank">tooltip demo </a></h2></section>
+        <section><h2><a href="demos/05-barchart-tooltips" target="_blank">tooltip demo </a></h2></section>
 
-        <section><h2><a href="/demos/06-linechart" target="_blank">tooltip demo 2 </a></h2></section>
+        <section><h2><a href="demos/06-linechart" target="_blank">tooltip demo 2 </a></h2></section>
 
-        <section data-background="#2d323d" data-state="new-section">
-          <h2>Let's bring in our <span class="red">Angular</span> chops</h2><br />
-          <div><img src="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" alt=""></div>
+        <section data-background="http://d3j5vwomefv46c.cloudfront.net/photos/large/848745141.gif?1397682397" data-state="new-section">
+          <h2>Let's bring in our <span class="red">Angular</span> chops</h2>
           <a href="http://goo.gl/nkFq9l">http://goo.gl/nkFq9l</a>
         </section>
 
         <section>
-          <h2>Basic Directive</h2>
+          <h3>Step 1: Get Data from a service</h3>
+          <pre><code class="language-javascript">'use strict';
+
+angular.module('d3AngularDemosApp')
+  .controller('BarChartCtrl', ['$scope', 'DataSvc',
+    function ($scope, DataSvc) {
+
+      $scope.ui = {};
+
+      $scope.refresh = function () {
+        $scope.ui.topRepos = [];
+        DataSvc.getTopRepos()
+          .then(function (data) {
+            $scope.ui.topRepos = data;
+          });
+      };
+
+      $scope.refresh();
+    }
+  ]);
+
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Step 2: basic directive</h2>
           <pre><code class="language-javascript">angular.module('app')
   .directive('barchart', function () {
     function linker(scope, element, attrs) {
       // set up all the  components (svg, scales, axis, .etc)
+      var el = element[0];
+      ...
+      var svg = d3.select(el).append('svg')
+      ...
       // exclude setup code that needs the data
     }
 
@@ -610,7 +665,7 @@ function handleMouseout(d, i) {
         </section>
 
         <section>
-          <h2>Step 1: "watch" for data</h2>
+          <h2>Step 3: "watch" for data</h2>
           <pre><code class="language-javascript">
 scope.$watch('data', function (newData, oldData) {
   var data = angular.copy(newData); // let's make a copy
@@ -620,18 +675,22 @@ scope.$watch('data', function (newData, oldData) {
         </section>
 
         <section>
-          <h3>Step 2: scope.render</h3>
+          <h3>Step 4: scope.render</h3>
           <pre><code class="language-javascript">
 scope.render = function (data) {
   // (1) update scales, axis
   // (2) transition new data
+  var rect = svg.selectAll('rect').data(data);
+  rect.enter().append('rect').attr(/*...*/);
+  rect.transition().attr(/*...*/);
   // (3) remove any data not needed
+  rect.exit().remove();
 }
           </code></pre>
         </section>
 
         <section>
-          <h3>Step 3: watch for resize event</h3>
+          <h3>Step 5: watch for resize event</h3>
           <pre><code class="language-javascript">
 // Browser onresize event
 window.onresize = function() {
@@ -648,21 +707,23 @@ scope.$watch(function () {
         </section>
 
         <section>
-          <h3>Step 4: scope.rezize</h3>
+          <h3>Step 6: scope.rezize</h3>
           <pre><code class="language-javascript">
 scope.resize = function () {
   // (1) update width
   width = el.clientWidth - margin.right - margin.left;
 
   // (2) update svg
+  var svg = d3.select(el).select('svg');
+  svg.attr('width', width + margin.right + margin.left);
 
-  // (3) take everything that is related to width
+  // (3) update everything that is related to width
 }
           </code></pre>
         </section>
 
         <section>
-          <h3>Step 5: Directive usage</h3>
+          <h3>Step 7: Directive usage</h3>
           <pre><code class="language-markup">
 <barchart data="ui.topRepos" x="lang" y="value" class="chart"></barchart>
           </code></pre>
@@ -687,7 +748,9 @@ scope.resize = function () {
           <p>pull requests are welcome :)</p>
         </section>
         <section>
-          <h2>the end :)</h1>
+          <h3>the end :)</h1>
+          <p><img src="img/snoopy.png" alt=""></p>
+          <p>© 2014 PEANUTS Worldwide LLC</p>
         </section>
 
       </div>
@@ -709,7 +772,7 @@ scope.resize = function () {
         center: true,
 
         theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+        transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
 
         // Parallax scrolling
         // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
