@@ -31,7 +31,7 @@ var el = d3.select('#chart'),
   width = elWidth - margin.right - margin.left,
   height = elHeight - margin.top - margin.bottom,
   fillColor = '#2d323d',
-  radius = 4;
+  radius = 7;
 
 var svg = d3.select('#chart').append('svg')
     .attr('width', elWidth)
@@ -81,6 +81,10 @@ var circles = svg.selectAll('circle')
   .enter()
   .append('circle')
     .attr(circleAttrs);
+
+
+
+
 
 // setTimeout(function () {
 

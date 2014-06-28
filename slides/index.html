@@ -54,7 +54,7 @@
           <hr />
           <p>Tweeting <a href="https://twitter.com/victorczm">@victorczm</a></p>
           <p>Coding <a href="https://github.com/victormejia/">@victormejia</a></p>
-          <p>Blogging @ <a href="http://victormejia.github.io">victormejia.github.io</a></p>
+          <p>Blogging @ <a href="http://victormejia.me">victormejia.me</a></p>
         </section>
 
         <section>
@@ -378,22 +378,6 @@ selection
         </section>
 
         <section>
-          <h2>Enter, Update & Exit</h2>
-          <p><a href="http://mbostock.github.io/d3/tutorial/circle.html">Three Little Circles</a></p>
-          <p><a href="http://bost.ocks.org/mike/join/">Thinking with Joins</a></p>
-        </section>
-
-        <section>
-          <h4>Things to remember</h4>
-          <ol>
-            <li>If the new dataset is <span class="mediumblue">smaller</span> than the old one, the surplus elements end up in the exit selection and get removed.</li>
-            <li>If the new dataset is <span class="mediumblue">larger</span>, the surplus data ends up in the enter selection and new nodes are added.</li>
-            <li>If the new dataset is exactly the <span class="mediumblue">same size</span>, then all the elements are simply updated with new positions, and no elements are added or removed.</li>
-          </ol>
-          <p>source: <a href="http://bost.ocks.org/mike/join/">Thining With Joins</a></p>
-        </section>
-
-        <section>
           <h3>We can chain</h3>
           <pre><code class="language-javascript">// create viz
 var selection = svg.selectAll('rect')
@@ -408,6 +392,54 @@ var selection = svg.selectAll('rect')
       fill: ...
     });
           </code></pre>
+        </section>
+
+        <section>
+          <h2>Enter, Update & Exit</h2>
+          <p><a href="http://mbostock.github.io/d3/tutorial/circle.html">Three Little Circles</a></p>
+          <p><a href="http://bost.ocks.org/mike/join/">Thinking with Joins</a></p>
+        </section>
+
+        <section>
+          <h2>General Pattern</h2>
+          <pre><code class="language-javascript">
+//create visualization
+var rect = svg.selectAll('rect').data(data);
+
+// transition new data
+rect.enter()
+  .append('rect')
+    .attr(...)
+
+// remove any data not needed
+rect.exit().remove();            
+
+          </code>
+        </section>
+
+        <section>
+          <h3>Enter</h3>
+          <img src="img/enter.jpg">
+        </section>
+
+        <section>
+          <h3>Update</h3>
+          <img src="img/update.jpg">
+        </section>
+
+        <section>
+          <h3>Exit</h3>
+          <img src="img/exit.jpg">
+        </section>
+
+        <section>
+          <h4>Things to remember</h4>
+          <ol>
+            <li>If the new dataset is <span class="mediumblue">smaller</span> than the old one, the surplus elements end up in the exit selection and get removed.</li>
+            <li>If the new dataset is <span class="mediumblue">larger</span>, the surplus data ends up in the enter selection and new nodes are added.</li>
+            <li>If the new dataset is exactly the <span class="mediumblue">same size</span>, then all the elements are simply updated with new positions, and no elements are added or removed.</li>
+          </ol>
+          <p>source: <a href="http://bost.ocks.org/mike/join/">Thining With Joins</a></p>
         </section>
 
         <section data-background="#2d323d" data-state="new-section">
@@ -612,6 +644,19 @@ function handleMouseout(d, i) {
         </section>
 
         <section>
+          <h3>Basic Gravatar Directive</h3>
+          <p data-height="492" data-theme-id="0" data-slug-hash="jkiDd" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/victormejia/pen/jkiDd/'>Gravatar Directive (AngularJS)</a> by Victor Mejia (<a href='http://codepen.io/victormejia'>@victormejia</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//codepen.io/assets/embed/ei.js"></script>
+        </section>
+<!--         <section>
+          <h2>Basic <a href="http://jsbin.com/zocisu/3/edit?html,js,output">Gravatar Directive</a></h2>
+        </section> -->
+
+        <section>
+          <h2>7 steps to build a D3 Angular directive</h2>
+        </section>
+
+        <section>
           <h3>Step 1: Get Data from a service</h3>
           <pre><code class="language-javascript">'use strict';
 
@@ -637,7 +682,14 @@ angular.module('d3AngularDemosApp')
         </section>
 
         <section>
-          <h2>Step 2: basic directive</h2>
+          <h3>Step 2: Directive usage</h3>
+          <pre><code class="language-markup">
+<barchart data="ui.topRepos" x="lang" y="value" class="chart"></barchart>
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Step 3: basic directive</h2>
           <pre><code class="language-javascript">angular.module('app')
   .directive('barchart', function () {
     function linker(scope, element, attrs) {
@@ -665,7 +717,7 @@ angular.module('d3AngularDemosApp')
         </section>
 
         <section>
-          <h2>Step 3: "watch" for data</h2>
+          <h2>Step 4: "watch" for data</h2>
           <pre><code class="language-javascript">
 scope.$watch('data', function (newData, oldData) {
   var data = angular.copy(newData); // let's make a copy
@@ -675,7 +727,7 @@ scope.$watch('data', function (newData, oldData) {
         </section>
 
         <section>
-          <h3>Step 4: scope.render</h3>
+          <h3>Step 5: scope.render</h3>
           <pre><code class="language-javascript">
 scope.render = function (data) {
   // (1) update scales, axis
@@ -690,7 +742,7 @@ scope.render = function (data) {
         </section>
 
         <section>
-          <h3>Step 5: watch for resize event</h3>
+          <h3>Step 6: watch for resize event</h3>
           <pre><code class="language-javascript">
 // Browser onresize event
 window.onresize = function() {
@@ -707,7 +759,7 @@ scope.$watch(function () {
         </section>
 
         <section>
-          <h3>Step 6: scope.rezize</h3>
+          <h3>Step 7: scope.rezize</h3>
           <pre><code class="language-javascript">
 scope.resize = function () {
   // (1) update width
@@ -719,13 +771,6 @@ scope.resize = function () {
 
   // (3) update everything that is related to width
 }
-          </code></pre>
-        </section>
-
-        <section>
-          <h3>Step 7: Directive usage</h3>
-          <pre><code class="language-markup">
-<barchart data="ui.topRepos" x="lang" y="value" class="chart"></barchart>
           </code></pre>
         </section>
 
@@ -747,6 +792,10 @@ scope.resize = function () {
           <a href="http://victormejia.github.io/d3-angular-demos">victormejia.github.io/d3-angular-demos</a>
           <p>pull requests are welcome :)</p>
         </section>
+
+
+        <section data-background="img/surprised.gif" data-state="new-section"></section>
+
         <section>
           <h3>the end :)</h1>
           <p><img src="img/snoopy.png" alt=""></p>
@@ -760,7 +809,6 @@ scope.resize = function () {
     <script src="lib/js/head.min.js"></script>
     <script src="plugin/prism/prism.js"></script>
     <script src="js/reveal.min.js"></script>
-
     <script>
 
       // Full list of configuration options available here:

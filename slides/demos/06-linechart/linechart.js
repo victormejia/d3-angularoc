@@ -123,7 +123,7 @@ d3.csv('aapl.csv', function(error, data) {
       d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 
     // the values
-    var xPos = coords[0];
+    var xPos = x(d.date);
     var yPos = y(d.close);
 
     var tooltip = svg.select('.linechart-tooltip');
